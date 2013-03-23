@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>c133.org/blog</title>
+<meta name="description" content="clee's blog" />
+<meta name="viewport" content="width=720" />
+<meta name="keywords" content="Chris Lee, KDE, freedesktop, SPC, developer" />
+<style type="text/css">
+a { text-decoration: none; }
+a:hover { text-decoration: none; color: #FFFF99; background: #00F}
+.title { font-size: 14pt; font-weight: bold; color: #336699; }
+.blosxomDate { display: block; font-weight: bold; font-size: 10pt; text-align: right; color: #cccccc; background-color: #2f343a; padding: 2px; }
+.blosxomTitle { font-size: 13pt; font-weight: bold; color: #000000; }
+.blosxomTime { text-decoration: italicize; color: #336699; }
+</style>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel="alternative stylesheet" type="text/css" href="/basic.css" title="Basic" />
+<link media="only screen and (min-device-width: 640)" rel="alternative stylesheet" type="text/css" href="/fancy.css" title="Fancy" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="index.rss" />
+
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="/ie6hacks.css" />
+<![endif]-->
+
+</head>
+
+<body>
+<!--[if IE 6]>
+<div id="content">
+<![endif]-->
+<div class="header">
+	<a class="header" href="http://c133.org/blog">c133.org/blog</a>
+</div>
+<div class="nav">all clee, all the time</div>
+<div id="left">
+<span class="blosxomDate">Wed, 21 Sep 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="networkmanager_and_kde"><span class="tbox"> .: NetworkManager and KDE :: </span></a>
+		<div class="text">
+			<p><a href="http://www.kdedevelopers.org/node/1465">Fab</a>: NetworkManager actually has a pretty well-designed separation between the front-end and the back-end; the only problem stalling us from being able to do cool things with it right now is that we have no working DBUS bindings for KDE3 (so nobody can easily write a Kicker applet to interface with NetworkManager to use on their desktop <b>today</b>), and KDE4 doesn't actually have anything usable at this point, whatsoever.</p><p>I brought this up at aKademy - aseigo and I were basically ready to go ahead with it but we got sidetracked with window icon previews in the window list on the desktop pager hover tooltip. (Try saying that five times fast.)</p><p>In theory, somebody could write the applet using the DBUS API from C, but the current Qt bindings in the DBUS tree are pretty much worthless, so it's not going to be pretty either way.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Sep/21#networkmanager_and_kde" title="Date link">17:14</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">tech/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/networkmanager_and_kde.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=NetworkManager and KDE" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sun, 11 Sep 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="robot_body"><span class="tbox"> .: would you put your brain in a robot body? :: </span></a>
+		<div class="text">
+			<p><a href="http://wadejolson.blogspot.com/2005/09/where-in-world-is-carmen-sandiego.html">Wade</a>: No, I don't have a robot answering my email. My robots are busy preparing for the ... I mean, uh, what robots? I don't have any robots.</p><p>I do have three totally awesome computers now, though (not including my work laptop). The first one is my Mac mini, which rules, but it's not the focus of this entry.</p><p>Over the past week or so, I'd run into some really odd stability issues with my AMD64 box. I decided to go to CompUSA and pick up a new motherboard, since the last issue I had with an AMD64 machine was also the mobo. Bring the new mobo back home. Remove the old one, move parts over to new one, hook up power connectors, flip the switch, and ... nothing.</p><p>The damned thing didn't even POST.</p><p>Somewhat frustrated, I decided to work on assembling my other new system. I've had a spare CPU, some extra RAM, and a slew of video cards laying around for a while now, so the only thing I really needed to pick up was a new case and a motherboard for this box. It's an "old" AthlonXP 1700+ - I figure it's probably worth me keeping a system around that can do AGP and run fast enough to prevent me from throwing it out the window.</p><p>The assembly on my new system went pretty well, until the part where I attempted to attach the power cable. The power supply I was using was a 24-pin, designed for the power requirements of the newer AMD64 systems. Normally, it wouldn't be too hard to plug in a 24-pin cable into the 20-pin socket on the motherboard, except that the mobo I picked up happens to have the IDE pins right next to the ATX pins.</p><p>And there was much frustration.</p><p>I was about to give up, but for some reason I decided to read the manual for the power supply in the new case that showed up, and if you look at page 3 in <a href="http://www.antec.com/pdf/manuals/SmartPower2_En.pdf">the manual</a>, you should see the picture that made my night.</p><p>The other power supply can break off the extra four pins so that I can use it on the motherboard.</p><p>I returned to CompUSA and got a replacement for the busted motherboard, and brought it home and set it up, and this one actually works, so now I've got both systems up and running beautifully.</p><p>My only issue now is that I need a DVI/USB KVM.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Sep/11#robot_body" title="Date link">05:49</a>] | [<a href="http://c133.org/blog/tech" title="Category">tech</a>] | <a href="http://c133.org/blog/tech/robot_body.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=would you put your brain in a robot body?" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Wed, 07 Sep 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="thanks"><span class="tbox"> .: thanks, Antonio :: </span></a>
+		<div class="text">
+			<p>Everybody else has been saying this on mailing-lists and whatnot, but I figured that it deserved saying on the Planet, too.</p><p>Antonio, aKademy 2005 rocked hardcore thanks to you and the LiMa guys. You guys kick ass. I didn't think it'd be possible to top Kastle, but you guys did it.</p><p>To next year! Helio, you ready for aKademy in Brazil? ;)<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Sep/07#thanks" title="Date link">01:06</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">tech/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/thanks.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=thanks, Antonio" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div id="right">
+	<div class="container">
+		<div class="mbox">
+			<span class="tbox"> .: about :: </span>
+			<div class="text">
+			<a href="mailto:clee@kde.org">Chris Lee</a><br />
+				KDE developer
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<div style="text-align: center; margin: 4px;">
+					<input type="hidden" name="cmd" value="_xclick" />
+					<input type="hidden" name="business" value="clee@kde.org" />
+					<input type="hidden" name="no_note" value="1" />
+					<input type="hidden" name="currency_code" value="USD" />
+					<input type="hidden" name="tax" value="0" />
+					<input type="image" style="border: 0px;" src="https://www.paypal.com/en_US/i/btn/x-click-but04.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" />
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="mbox">
+			<span class="tbox"> .: archives :: </span>
+			<div class="text">
+				<a href="http://c133.org/blog/2007/Jun">2007-Jun</a><br />
+<a href="http://c133.org/blog/2007/May">2007-May</a><br />
+<a href="http://c133.org/blog/2007/Apr">2007-Apr</a><br />
+<a href="http://c133.org/blog/2007/Jan">2007-Jan</a><br />
+<a href="http://c133.org/blog/2006/Dec">2006-Dec</a><br />
+<a href="http://c133.org/blog/2006/Nov">2006-Nov</a><br />
+<a href="http://c133.org/blog/2006/Oct">2006-Oct</a><br />
+<a href="http://c133.org/blog/2006/Aug">2006-Aug</a><br />
+<a href="http://c133.org/blog/2006/May">2006-May</a><br />
+<a href="http://c133.org/blog/2006/Apr">2006-Apr</a><br />
+<a href="http://c133.org/blog/2006/Mar">2006-Mar</a><br />
+<a href="http://c133.org/blog/2006/Feb">2006-Feb</a><br />
+<a href="http://c133.org/blog/2006/Jan">2006-Jan</a><br />
+<a href="http://c133.org/blog/2005/Dec">2005-Dec</a><br />
+<a href="http://c133.org/blog/2005/Nov">2005-Nov</a><br />
+<a href="http://c133.org/blog/2005/Oct">2005-Oct</a><br />
+<a href="http://c133.org/blog/2005/Sep">2005-Sep</a><br />
+<a href="http://c133.org/blog/2005/Aug">2005-Aug</a><br />
+<a href="http://c133.org/blog/2005/Jul">2005-Jul</a><br />
+<a href="http://c133.org/blog/2005/Jun">2005-Jun</a><br />
+<a href="http://c133.org/blog/2005/May">2005-May</a><br />
+<a href="http://c133.org/blog/2005/Apr">2005-Apr</a><br />
+<a href="http://c133.org/blog/2005/Mar">2005-Mar</a><br />
+<a href="http://c133.org/blog/2005/Feb">2005-Feb</a><br />
+<a href="http://c133.org/blog/2005/Jan">2005-Jan</a><br />
+<a href="http://c133.org/blog/2004/Dec">2004-Dec</a><br />
+<a href="http://c133.org/blog/2004/Nov">2004-Nov</a><br />
+<a href="http://c133.org/blog/2004/Oct">2004-Oct</a><br />
+<a href="http://c133.org/blog/2004/Sep">2004-Sep</a><br />
+<a href="http://c133.org/blog/2004/Aug">2004-Aug</a><br />
+<a href="http://c133.org/blog/2004/Jul">2004-Jul</a><br />
+<a href="http://c133.org/blog/2004/Jun">2004-Jun</a><br />
+<a href="http://c133.org/blog/2004/May">2004-May</a><br />
+<a href="http://c133.org/blog/2004/Apr">2004-Apr</a><br />
+<a href="http://c133.org/blog/2004/Feb">2004-Feb</a><br />
+<a href="http://c133.org/blog/2004/Jan">2004-Jan</a><br /><br />
+				<a href="index.rss"><img src="/img/xml.gif" alt="RSS" /></a>
+			</div>
+			<div style="background-color: white; text-align: center">
+				<a href="http://roughingit.subtlehints.net/pyblosxom/"><img src="/img/pb_pyblosxom.gif" alt="pyblosxom" /></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--[if IE 6]>
+</div>
+<![endif]-->
+
+<div id="footer">
+	web site by <a href="mailto:clee@kde.org">clee</a>
+</div>
+
+</body>
+</html>

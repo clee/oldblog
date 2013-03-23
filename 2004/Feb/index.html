@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>c133.org/blog</title>
+<meta name="description" content="clee's blog" />
+<meta name="viewport" content="width=720" />
+<meta name="keywords" content="Chris Lee, KDE, freedesktop, SPC, developer" />
+<style type="text/css">
+a { text-decoration: none; }
+a:hover { text-decoration: none; color: #FFFF99; background: #00F}
+.title { font-size: 14pt; font-weight: bold; color: #336699; }
+.blosxomDate { display: block; font-weight: bold; font-size: 10pt; text-align: right; color: #cccccc; background-color: #2f343a; padding: 2px; }
+.blosxomTitle { font-size: 13pt; font-weight: bold; color: #000000; }
+.blosxomTime { text-decoration: italicize; color: #336699; }
+</style>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel="alternative stylesheet" type="text/css" href="/basic.css" title="Basic" />
+<link media="only screen and (min-device-width: 640)" rel="alternative stylesheet" type="text/css" href="/fancy.css" title="Fancy" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="index.rss" />
+
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="/ie6hacks.css" />
+<![endif]-->
+
+</head>
+
+<body>
+<!--[if IE 6]>
+<div id="content">
+<![endif]-->
+<div class="header">
+	<a class="header" href="http://c133.org/blog">c133.org/blog</a>
+</div>
+<div class="nav">all clee, all the time</div>
+<div id="left">
+<span class="blosxomDate">Thu, 26 Feb 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="in_new_york"><span class="tbox"> .: in new york :: </span></a>
+		<div class="text">
+			<p>I'm finally in New York, and I've actually been here for a couple of weeks now. been a while since I updated the blog so I figured "what the hell" and decided to go ahead and post a bit of info.</p><p>the job search hasn't been too promising so far, but Syracuse is gorgeous. I really love the area, and the fact that snow is all over the place probably has something to do with it. everyone here thinks I'm insane because I love the cold; maybe I am actually crazy, but I still get a kick out of it.</p><p>haven't had much time to hack on KDE lately, what with trying to find viable employment. my aunt has this great idea that I should be the Easter Bunny or one of his assistants; I'm really not too into the idea personally, but I do have to admit that it'd probably be pretty funny if I had to resort to that. I mean, it'd suck terribly for me of course. but it'd still be hilarious, and maybe in a few years I'd be able to laugh about it. maybe.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Feb/26#in_new_york" title="Date link">20:39</a>] | [<a href="http://c133.org/blog/personal" title="Category">personal</a>] | <a href="http://c133.org/blog/personal/in_new_york.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=in new york" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Tue, 10 Feb 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="disappointment"><span class="tbox"> .: disappointment :: </span></a>
+		<div class="text">
+			<p>So, I have had a lot of respect for the GNOME hackers for a long time. I have been incredibly happy that the core hackers in each camp have got along with cheerfulness, decorum and mutual respect - even while some overzealous members of our user communities have flamed and bickered, generating this idea of "The Desktop War".</p><p>But this week, a bunch of actual GNOME developers - not random gimps being idiots - have acted like children and made everyone working on the Linux desktop look like a bunch of juveniles. I'm very disappointed.</p><p>How do they expect corporations to take Linux desktop efforts seriously with a release name like <a href="http://mail.gnome.org/archives/desktop-devel-list/2004-February/msg00051.html">"That and a pair of testicles"</a>? Some people have mentioned that this won't reflect badly on KDE since GNOME and KDE are only related by virtue of being alternatives to eachother; they might have a point, but in reality, nobody in the Windows world knows the difference between KDE and GNOME and this sort of crap makes Linux desktop acceptance that much more difficult for everyone involved.</p><p>Very disappointed.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Feb/10#disappointment" title="Date link">15:15</a>] | [<a href="http://c133.org/blog/" title="Category"></a>] | <a href="http://c133.org/blog/disappointment.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=disappointment" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Mon, 09 Feb 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="oh_how_I_hate_gssapi"><span class="tbox"> .: oh how I hate gssapi :: </span></a>
+		<div class="text">
+			<p>so now that I have a local kerberos server, and it hands out tickets like a champ, and life is good, the next (logical) step is to want to have single-sign-on for things like (say) my email.</p><p>KDE has a custom ground-up SASL implementation that supports LOGIN, PLAIN, CRAM-MD5 and DIGEST-MD5, but not GSSAPI (which is a layer on top of Kerberos). I took a look at it and decided that I could implement a GSSAPI function for the KDE SASL implementation. I had no idea that it'd be so damned frustrating. why is GSSAPI so complicated, and poorly-designed to boot?</p><p>if you think I'm joking, or complaining about nothing - the main function, gss_init_sec_context, takes THIRTEEN parameters. that's a lot of margin-for-error. one would think they might use custom data structures, ones more complicated than the standard struct with a void pointer and an int to indicate the length of the data, but no. of course not.</p><p>oh well. when I'm done, KDE will have a GSSAPI implementation, meaning that it should Just Work (TM) with any Kerberized service that uses SASL. Namely, this means IMAP servers and probably a few SMTP servers - having single-sign-on for these services will be great.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Feb/09#oh_how_I_hate_gssapi" title="Date link">15:47</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">tech/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/oh_how_I_hate_gssapi.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=oh how I hate gssapi" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="mmm_kerberos"><span class="tbox"> .: mmm. kerberos. :: </span></a>
+		<div class="text">
+			<p>so I finished setting up a working LDAP server here at home. with Kerberos, for that single-sign-on goodness. I can see why people dig this. I can also see why people fucking hate it. awesome features, complete and total pain in the ass to set up. honestly, I think I probably would rather have installed openBSD, and that's saying a lot.</p><p>but now that it's working, and I have it set up, I am a golden god.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Feb/09#mmm_kerberos" title="Date link">09:03</a>] | [<a href="http://c133.org/blog/tech" title="Category">tech</a>] | <a href="http://c133.org/blog/tech/mmm_kerberos.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=mmm. kerberos." class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sun, 01 Feb 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="orkut"><span class="tbox"> .: orkut :: </span></a>
+		<div class="text">
+			<p>everybody else is blogging about it, so I guess I'll join in too. orkut is nifty. I don't have five thousand friends, but I think that maybe instead of being obsessed with collecting as many as possible I'm going to just use it to keep in touch with the ones that I do have. well, the ones that are on the service anyway.</p><p>other than that, not much news. been listening to Massive Attack's 100th Window lately. good stuff. really starting to dig Thirteenth Step, as well, for some reason. I didn't like it that much when I first heard it, but it's grown on me quite a bit.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Feb/01#orkut" title="Date link">16:44</a>] | [<a href="http://c133.org/blog/personal" title="Category">personal</a>] | <a href="http://c133.org/blog/personal/orkut.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=orkut" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div id="right">
+	<div class="container">
+		<div class="mbox">
+			<span class="tbox"> .: about :: </span>
+			<div class="text">
+			<a href="mailto:clee@kde.org">Chris Lee</a><br />
+				KDE developer
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<div style="text-align: center; margin: 4px;">
+					<input type="hidden" name="cmd" value="_xclick" />
+					<input type="hidden" name="business" value="clee@kde.org" />
+					<input type="hidden" name="no_note" value="1" />
+					<input type="hidden" name="currency_code" value="USD" />
+					<input type="hidden" name="tax" value="0" />
+					<input type="image" style="border: 0px;" src="https://www.paypal.com/en_US/i/btn/x-click-but04.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" />
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="mbox">
+			<span class="tbox"> .: archives :: </span>
+			<div class="text">
+				<a href="http://c133.org/blog/2007/Jun">2007-Jun</a><br />
+<a href="http://c133.org/blog/2007/May">2007-May</a><br />
+<a href="http://c133.org/blog/2007/Apr">2007-Apr</a><br />
+<a href="http://c133.org/blog/2007/Jan">2007-Jan</a><br />
+<a href="http://c133.org/blog/2006/Dec">2006-Dec</a><br />
+<a href="http://c133.org/blog/2006/Nov">2006-Nov</a><br />
+<a href="http://c133.org/blog/2006/Oct">2006-Oct</a><br />
+<a href="http://c133.org/blog/2006/Aug">2006-Aug</a><br />
+<a href="http://c133.org/blog/2006/May">2006-May</a><br />
+<a href="http://c133.org/blog/2006/Apr">2006-Apr</a><br />
+<a href="http://c133.org/blog/2006/Mar">2006-Mar</a><br />
+<a href="http://c133.org/blog/2006/Feb">2006-Feb</a><br />
+<a href="http://c133.org/blog/2006/Jan">2006-Jan</a><br />
+<a href="http://c133.org/blog/2005/Dec">2005-Dec</a><br />
+<a href="http://c133.org/blog/2005/Nov">2005-Nov</a><br />
+<a href="http://c133.org/blog/2005/Oct">2005-Oct</a><br />
+<a href="http://c133.org/blog/2005/Sep">2005-Sep</a><br />
+<a href="http://c133.org/blog/2005/Aug">2005-Aug</a><br />
+<a href="http://c133.org/blog/2005/Jul">2005-Jul</a><br />
+<a href="http://c133.org/blog/2005/Jun">2005-Jun</a><br />
+<a href="http://c133.org/blog/2005/May">2005-May</a><br />
+<a href="http://c133.org/blog/2005/Apr">2005-Apr</a><br />
+<a href="http://c133.org/blog/2005/Mar">2005-Mar</a><br />
+<a href="http://c133.org/blog/2005/Feb">2005-Feb</a><br />
+<a href="http://c133.org/blog/2005/Jan">2005-Jan</a><br />
+<a href="http://c133.org/blog/2004/Dec">2004-Dec</a><br />
+<a href="http://c133.org/blog/2004/Nov">2004-Nov</a><br />
+<a href="http://c133.org/blog/2004/Oct">2004-Oct</a><br />
+<a href="http://c133.org/blog/2004/Sep">2004-Sep</a><br />
+<a href="http://c133.org/blog/2004/Aug">2004-Aug</a><br />
+<a href="http://c133.org/blog/2004/Jul">2004-Jul</a><br />
+<a href="http://c133.org/blog/2004/Jun">2004-Jun</a><br />
+<a href="http://c133.org/blog/2004/May">2004-May</a><br />
+<a href="http://c133.org/blog/2004/Apr">2004-Apr</a><br />
+<a href="http://c133.org/blog/2004/Feb">2004-Feb</a><br />
+<a href="http://c133.org/blog/2004/Jan">2004-Jan</a><br /><br />
+				<a href="index.rss"><img src="/img/xml.gif" alt="RSS" /></a>
+			</div>
+			<div style="background-color: white; text-align: center">
+				<a href="http://roughingit.subtlehints.net/pyblosxom/"><img src="/img/pb_pyblosxom.gif" alt="pyblosxom" /></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--[if IE 6]>
+</div>
+<![endif]-->
+
+<div id="footer">
+	web site by <a href="mailto:clee@kde.org">clee</a>
+</div>
+
+</body>
+</html>

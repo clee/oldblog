@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>c133.org/blog</title>
+<meta name="description" content="clee's blog" />
+<meta name="keywords" content="Chris Lee, KDE, freedesktop, SPC, developer" />
+<style type="text/css">
+a { text-decoration: none; }
+a:hover { text-decoration: none; color: #FFFF99; background: #00F}
+.title { font-size: 14pt; font-weight: bold; color: #336699; }
+.blosxomDate { display: block; font-weight: bold; font-size: 10pt; text-align: right; color: #cccccc; background-color: #2f343a; padding: 2px; }
+.blosxomTitle { font-size: 13pt; font-weight: bold; color: #000000; }
+.blosxomTime { text-decoration: italicize; color: #336699; }
+</style>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel="alternative stylesheet" type="text/css" href="/basic.css" title="Basic" />
+<link rel="alternative stylesheet" type="text/css" href="/fancy.css" title="Fancy" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://c133.org/blog/?flav=rss" />
+<link rel="alternate" type="text/plain" title="RSS3" href="http://c133.org/blog/?flav=rss3" />
+
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="/ie6hacks.css" />
+<![endif]-->
+
+</head>
+
+<body>
+<!--[if IE 6]>
+<div id="content">
+<![endif]-->
+<div class="header">
+	<a class="header" href="http://c133.org/blog">c133.org/blog</a>
+</div>
+<div class="nav">all clee, all the time</div>
+<div id="left">
+<span class="blosxomDate">Tue, 12 Oct 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="showdown"><span class="tbox"> .: showdown :: </span></a>
+		<div class="text">
+			<p>I blogged earlier about KDE potentially moving our repositories from the ancient and archaic CVS system to the new hotness known as <a href="http://subversion.tigris.org/">Subversion</a>.</p><p>This time around, I've got more ammunition for discussion and a lot of thoughts about the relative strengths and weaknesses of each system as they apply to KDE. Hopefully other KDE developers will read these notes and at least take them into consideration when discussing our eventual move away from CVS.</p><p>So - first off, a few words about CVS. CVS has served KDE faithfully for years, and has been (for us) fairly stable and reliable. It doesn't change much. And, believe it or not, CVS does have some strengths. <br /><table border="0" cellspacing="1" cellpadding="3"><tr><th colspan="2">CVS</th></tr><tr><th>Strengths</th><th>Weaknesses</th></tr><tr><td><ul><li>Ubiquitous (practically every operating system on every platform can run CVS)</li><li>Relatively light on resource usage</li><li>Comparitively light on disk usage</li><li>It actually <b>works</b></li></ul></td><td><ul><li>Branching is painful</li><li>Lacking in certain very basic features</li><li>Lack of atomicity with commits; no transactions</li><li>Not very well-optimized for low-bandwidth</li><li>Difficulty handling binary files properly</li></ul></td></tr></table></p><p>Now, Subversion fixes a few of these issues, but at the core Subversion's goal is to be a better CVS than CVS. It doesn't implement wire compatibility, nor can it natively use the old CVS repository format; instead, it maintains the same ideas as CVS (namely the same centralized development model), as well as a compatible command-set except for areas where changes are needed to deal with Subversion having features that CVS doesn't.<br /><table cellspacing="1" cellpadding="3"><tr><th colspan="2">Subversion</th></tr><tr><th>Strengths</th><th>Weaknesses</th></tr><tr><td><ul><li>Little to no learning curve if you already know CVS</li><li>Atomic commits, with <a title="If the commit fails - client kills it, connection dies, etc - it doesn't end up halfway in the repository. Instead, it fails completely.">transactions</a></li><li>File renames</li><li>More efficient wire protocol for <a title="Transmits diffs instead of full files whenever possible, both server-to-client and client-to-server">low-bandwidth</a></li></ul></td><td><ul><li>Disk usage is significantly higher than CVS for a converted repository</li><li>Subversion seems slower than CVS, quite a bit so in some cases</li><li>Not nearly as ubiquitous as CVS (yet)</li><li>Resource usage is relatively higher than CVS</li></ul></td></tr></table></p><p>And, just for good measure (basically, because I like it) I'll throw in a little bit about Arch, also known as 'tla'.<br /><table border="0" cellspacing="1" cellpadding="3"><tr><th colspan="2">Arch</th></tr><tr><th>Strengths</th><th>Weaknesses</th></tr><tr><td><ul><li>Super intelligent merging support</li><li>GPG signing support</li><li>Seamless inter-archive branching support</li><li>Very easy on server-side resources</li><li>Offline commits</li></ul></td><td><ul><li>Relatively high learning curve</li><li>Nowhere near as ubiquitous as even Subversion</li><li>Rather difficult and verbose user-interface</li><li>Disk usage is also higher than CVS</li><li>Speed is not very impressive</li></ul></td></tr></table></p><p>What does this mean for KDE?</p><p>I think that Subversion is a much more natural fit for KDE than Arch. We have a very centralized development model; however, the disk usage issue is depressing to think about. I ran a test conversion of our kdelibs repository from CVS to Subversion, once using the Berkeley database backend and once using the new fsfs backend; the bdb backend takes up 1194M of space, and the fsfs backend takes 1130M of space on my system. In comparison, the CVS repository takes up 281M of space for the same revisions. Some of the Subversion developers have offered me a few hints, but I cringe to think about how difficult the migration will be for a <b>large</b> module such as kde-i18n.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Oct/12#showdown" title="Date link">18:59</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">tech/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/showdown.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=showdown" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div id="right">
+	<div class="container">
+		<div class="mbox">
+			<span class="tbox"> .: about :: </span>
+			<div class="text">
+			<a href="mailto:clee@kde.org">Chris Lee</a><br />
+				KDE developer
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<div style="text-align: center; margin: 4px;">
+					<input type="hidden" name="cmd" value="_xclick" />
+					<input type="hidden" name="business" value="clee@kde.org" />
+					<input type="hidden" name="no_note" value="1" />
+					<input type="hidden" name="currency_code" value="USD" />
+					<input type="hidden" name="tax" value="0" />
+					<input type="image" style="border: 0px;" src="https://www.paypal.com/en_US/i/btn/x-click-but04.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" />
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="mbox">
+			<span class="tbox"> .: archives :: </span>
+			<div class="text">
+				<a href="http://c133.org/blog/2005/Sep">2005-Sep</a><br />
+<a href="http://c133.org/blog/2005/Aug">2005-Aug</a><br />
+<a href="http://c133.org/blog/2005/Jul">2005-Jul</a><br />
+<a href="http://c133.org/blog/2005/Jun">2005-Jun</a><br />
+<a href="http://c133.org/blog/2005/May">2005-May</a><br />
+<a href="http://c133.org/blog/2005/Apr">2005-Apr</a><br />
+<a href="http://c133.org/blog/2005/Mar">2005-Mar</a><br />
+<a href="http://c133.org/blog/2005/Feb">2005-Feb</a><br />
+<a href="http://c133.org/blog/2005/Jan">2005-Jan</a><br />
+<a href="http://c133.org/blog/2004/Dec">2004-Dec</a><br />
+<a href="http://c133.org/blog/2004/Nov">2004-Nov</a><br />
+<a href="http://c133.org/blog/2004/Oct">2004-Oct</a><br />
+<a href="http://c133.org/blog/2004/Sep">2004-Sep</a><br />
+<a href="http://c133.org/blog/2004/Aug">2004-Aug</a><br />
+<a href="http://c133.org/blog/2004/Jul">2004-Jul</a><br />
+<a href="http://c133.org/blog/2004/Jun">2004-Jun</a><br />
+<a href="http://c133.org/blog/2004/May">2004-May</a><br />
+<a href="http://c133.org/blog/2004/Apr">2004-Apr</a><br />
+<a href="http://c133.org/blog/2004/Feb">2004-Feb</a><br />
+<a href="http://c133.org/blog/2004/Jan">2004-Jan</a><br /><br />
+				<a href="index.rss"><img src="/img/xml.gif" alt="RSS" /></a>
+			</div>
+			<div style="background-color: white; text-align: center">
+				<a href="http://roughingit.subtlehints.net/pyblosxom/"><img src="/img/pb_pyblosxom.gif" alt="pyblosxom" /></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--[if IE 6]>
+</div>
+<![endif]-->
+
+<div id="footer">
+	web site by <a href="mailto:clee@kde.org">clee</a>
+</div>
+
+</body>
+</html>

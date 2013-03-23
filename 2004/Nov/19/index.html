@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>c133.org/blog</title>
+<style type="text/css">
+a { text-decoration: none; }
+a:hover { text-decoration: none; color: #FFFF99; background: #00F}
+.title { font-size: 14pt; font-weight: bold; color: #336699; }
+.blosxomDate { display: block; font-weight: bold; font-size: 10pt; text-align: right; color: #cccccc; background-color: #2f343a; padding: 2px; }
+.blosxomTitle { font-size: 13pt; font-weight: bold; color: #000000; }
+.blosxomTime { text-decoration: italicize; color: #336699; }
+</style>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel="alternative stylesheet" type="text/css" href="/basic.css" title="Basic" />
+<link rel="alternative stylesheet" type="text/css" href="/fancy.css" title="Fancy" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://c133.org/log/?flav=rss" />
+<link rel="alternate" type="text/plain" title="RSS3" href="http://c133.org/log/?flav=rss3" />
+
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="/ie6hacks.css" />
+<![endif]-->
+
+</head>
+
+<body>
+<!--[if IE 6]>
+<div id="content">
+<![endif]-->
+<div class="header">
+	<a class="header" href="http://c133.org/log">c133.org/blog</a>
+</div>
+<div class="nav">all clee, all the time</div>
+<div id="left">
+<span class="blosxomDate">Fri, 19 Nov 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="give_me_money"><span class="tbox"> .: give me money :: </span></a>
+		<div class="text">
+			<p>Well, you don't have to of course. But if you like me, or you really really like me, or you like the work I do on KDE or you just have too much money, you can donate funds to <a href="https://www.paypal.com/xclick/business=clee%40kde.org&no_note=1&tax=0&currency_code=USD">clee@kde.org via PayPal</a>. I'll be putting a button up as well. hooray capitalism!<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#give_me_money" title="Date link">13:08</a>] | [<a href="http://c133.org/log/" title="Category"></a>] | <a href="http://c133.org/log/give_me_money.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=give me money" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="you_want_the_mustache_on_or_off"><span class="tbox"> .: you want the mustache on, or off? :: </span></a>
+		<div class="text">
+			<p>I crave brownies.</p><p>That is all.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#you_want_the_mustache_on_or_off" title="Date link">13:08</a>] | [<a href="http://c133.org/log/random" title="Category">random</a>] | <a href="http://c133.org/log/random/you_want_the_mustache_on_or_off.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=you want the mustache on, or off?" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="disappointment"><span class="tbox"> .: disappointment :: </span></a>
+		<div class="text">
+			<p>So, I have had a lot of respect for the GNOME hackers for a long time. I have been incredibly happy that the core hackers in each camp have got along with cheerfulness, decorum and mutual respect - even while some overzealous members of our user communities have flamed and bickered, generating this idea of "The Desktop War".</p><p>But this week, a bunch of actual GNOME developers - not random gimps being idiots - have acted like children and made everyone working on the Linux desktop look like a bunch of juveniles. I'm very disappointed.</p><p>How do they expect corporations to take Linux desktop efforts seriously with a release name like <a href="http://mail.gnome.org/archives/desktop-devel-list/2004-February/msg00051.html">"That and a pair of testicles"</a>? Some people have mentioned that this won't reflect badly on KDE since GNOME and KDE are only related by virtue of being alternatives to eachother; they might have a point, but in reality, nobody in the Windows world knows the difference between KDE and GNOME and this sort of crap makes Linux desktop acceptance that much more difficult for everyone involved.</p><p>Very disappointed.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#disappointment" title="Date link">13:08</a>] | [<a href="http://c133.org/log/" title="Category"></a>] | <a href="http://c133.org/log/disappointment.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=disappointment" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="4am_once_again"><span class="tbox"> .: 4AM once again :: </span></a>
+		<div class="text">
+			<p>So, I have a confession to make.</p><p>I've been using <a href="http://www.imendio.com/projects/gossip/">Gossip</a> as my Jabber client for a while. Which has been working out fairly well, since the UI is nice and clean. But there's been this slight annoyance with it - every time that I close a chatwindow in Gossip, it forgets how big the window was. Just completely forgets it.</p><p>This behavior finally got annoying enough that I put some gloves on, dug down deep, closed my eyes, and <a href="http://c133.org/tmp/gossip-chat-window-save-size.diff">massaged some GNOME code</a>.</p><p>The good news is, I lived. I have survived to tell the tale.</p><p>The bad news is, it was scary. And I feel sort of dirty.</p><p>It took a few hours to work out exactly what needed to go where, but overall it wasn't quite as terrifying as I had thought it would be. My underscore key did get quite a workout though. And I got to determine a few more reasons why I'm definitely glad to be a KDE developer. (Namespaces. Classes. God, I never thought I'd be so happy to look at classes again.)<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#4am_once_again" title="Date link">13:08</a>] | [<a href="http://c133.org/log/tech" title="Category">tech</a>] | <a href="http://c133.org/log/tech/4am_once_again.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=4AM once again" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="whoops"><span class="tbox"> .: whoops :: </span></a>
+		<div class="text">
+			<p>Ran out of disk space on tycho for a minute there.</p><p>For those of you who don't know, tycho is the machine which hosts not only c133.org (and this my web site and email) but also planetKDE.org and Daniel Stone's fooishbar.org.</p><p>So when it runs out of disk space, planet KDE goes down and my email stops arriving which makes me sad.</p><p>It was getting to be about time to archive the email off again anyway. I'm up to 100M again in my Maildirs. Ugh.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#whoops" title="Date link">13:08</a>] | [<a href="http://c133.org/log/tech" title="Category">tech</a>] | <a href="http://c133.org/log/tech/whoops.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=whoops" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="bitchin_home_made_tesla_coil"><span class="tbox"> .: bitchin' home-made tesla coil :: </span></a>
+		<div class="text">
+			<p>HDTV service was installed and turned on yesterday. Still feeling a little sick and not so hot, but I'm going in to work today.</p><p>The new Smallville season looks <b>good</b> so far. I love that show. I have to admit, I didn't really like Lois at first but her personality has already started growing on me. I just wish that Comcast offered the WB in HD up here.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#bitchin_home_made_tesla_coil" title="Date link">13:08</a>] | [<a href="http://c133.org/log/tech" title="Category">tech</a>] | <a href="http://c133.org/log/tech/bitchin_home_made_tesla_coil.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=bitchin' home-made tesla coil" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="whoops_dart_in_your_neck"><span class="tbox"> .: whoops! dart in your neck :: </span></a>
+		<div class="text">
+			<p>My evil plot to subvert GNOME is slowly taking shape. Todd Berman is talking about having me help him with some C# bindings for libgaim. Not only will this rock because I may have a decent API to model my own IM client's after once the C# bindings are working, but it has the benefit of letting me learn a lot more about C# and Mono.</p><p>So many things I need to take care of tech-wise... still have to actually run a power cord to the quad PPro in the closet, have to set up LDAP accounts on it and Kerberos with some sort of filesharing for the home directories and then get the client computers here to work properly with that. Want to set up Ubuntu on one of my machines here since it seems to be pretty cool and I'm all about Debian without the brain damage. Need to figure out whether or not to leave the Radeon 9600 in my desktop or put back in the Radeon 8500 (or the GeForce4MX since the nvidia driver is the only one that actually gives reasonable performance with Composite right now...)</p><p>Not to mention work stuff. Oy. Not enough hours in the day. And where the hell are my clones, dammit? I'm kinda under-staffed here.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#whoops_dart_in_your_neck" title="Date link">13:08</a>] | [<a href="http://c133.org/log/tech" title="Category">tech</a>] | <a href="http://c133.org/log/tech/whoops_dart_in_your_neck.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=whoops! dart in your neck" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="it_s_4am"><span class="tbox"> .: it's 4am :: </span></a>
+		<div class="text">
+			<p>mpyne has called me out and made it public that I have Grand Plans for a pyblosxom plugin which will read (via XML-RPC) a chunk of text and then throw it on the blog if it likes it.</p><p>The trick is getting the plugin to like it.</p><p>My idea currently is to make the chunk of text a valid GPG-signed message. Have the server plugin read it in, decode it, check the signature against the configured key ID from the pyblosxom config file, and then if all of the criteria match, post it on the blog.</p><p>Have a few small issues to work out, but it looks like a lot of the hard work has been done for me. daniels wrote a Perl script that sort of does this if you filter email into it, but I hate Perl and the setup for that is annoying. Editing pyblosxom's config files is easy; I doubt that I'm going to end up losing data that way. If I somehow misconfigure a mail server, such that everything for my email ends up at blog@c133.org or something, I'll be fucked.</p><p>And I don't like that. So, I guess this is the part where I formally announce that I have intentions to actually finish this module (since I have a half-aborted attempt at it from a while back), clean up the code so that my key ID and stuff are no longer hardcoded into it, and then there might actually be a public release.</p><p>(Of course, once it's out, a KDE app which will be able to post to it, probably by using DCOP to communicate with KGPG, will be forthcoming.)<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#it_s_4am" title="Date link">13:08</a>] | [<a href="http://c133.org/log/tech" title="Category">tech</a>] | <a href="http://c133.org/log/tech/it_s_4am.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=it's 4am" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="and_ive_heard_great_things_kevin"><span class="tbox"> .: and I've heard great things, Kevin :: </span></a>
+		<div class="text">
+			<p>Got another new keyboard. The Logitech one that I was happy with before ended up not being nearly as rockalicious as I had initially thought. Programmable keys, yada yada, USB blah blah, shitty. No, <a href="http://christopher.aillon.org/">caillon</a> was cool enough to buy me a <a href="http://modelm.org/">Model M keyboard</a>. CLICKETY FOR LIFE!</p><p>And since I have had this one in my hands, I have realized just how much faster and more accurately I type on these keyboards. I missed that feeling. If only someone would make a USB-native Model M... (Oh, and I ordered another one from eBay which was apparently delivered to my apartment's office building this morning but I wasn't here.)</p><p>Seriously. These keyboards totally rule.</p><p>Incidentally, the one that caillon purchased was in fact not an original Model M but remade by the Keepers of the One True Keyboard, those saints at <a href="http://www.pckeyboard.com/">PC Keyboard</a>. These guys rule. I have no relation to them save that of the delighted recipient of one of their fine products.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#and_ive_heard_great_things_kevin" title="Date link">13:08</a>] | [<a href="http://c133.org/log/tech" title="Category">tech</a>] | <a href="http://c133.org/log/tech/and_ive_heard_great_things_kevin.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=and I've heard great things, Kevin" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="hardware_for_doom3"><span class="tbox"> .: hardware for doom3 :: </span></a>
+		<div class="text">
+			<p>new CPU and 1.5GB of RAM arrived yesterday to bolster my hardware so that I can actually play Doom 3.</p><p>That game is the first game since Silent Hill to make me actually afraid to go around the next corner.</p><p>It's awesome.</p><p>Playing it in the dark, on my TV, with the sound turned waaaay up, is absolutely terrifying, and by far one of the best gaming experiences I've ever had.</p><p>If only they'd release Linux binaries. Carmack, are you listening? I hate Windows and I'm sick of putting up with weird random shit just so I can play your masterpiece of a game.</p><p>::sigh::<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#hardware_for_doom3" title="Date link">13:08</a>] | [<a href="http://c133.org/log/tech" title="Category">tech</a>] | <a href="http://c133.org/log/tech/hardware_for_doom3.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=hardware for doom3" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="status_2004_10_07"><span class="tbox"> .: status 2004/10/07 :: </span></a>
+		<div class="text">
+			<p>Damn. The past week has been awesome.<br /><ul><li>Did the functional testing and RHNQA on a KDE errata here.</li><li>Filed bugs against gnome-panel, evolution-data-server, bonobo-activation-server, and ran into a terribly amusing metacity crasher.</li><li>Did the functional testing on an ugly cyrus-sasl vulnerability.</li><li>Did a *new* round of functional testing on a bug caused by the fix to the ugly cyrus-sasl vulnerability.</li><li>Pushed a release of redhat-artwork sometime last week anyway.</li><li>Continued hacking on the Qt port of BlueCurve.</li></ul></p><p>All in all, dangerously productive. Not to mention keeping track of email and IRC.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#status_2004_10_07" title="Date link">13:08</a>] | [<a href="http://c133.org/log/tech/redhat" title="Category">tech/redhat</a>] | <a href="http://c133.org/log/tech/redhat/status_2004_10_07.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=status 2004/10/07" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="hooray_errata"><span class="tbox"> .: hooray errata :: </span></a>
+		<div class="text">
+			<p>ugh. Errata suck.</p><p>that is all.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#hooray_errata" title="Date link">13:08</a>] | [<a href="http://c133.org/log/tech/redhat" title="Category">tech/redhat</a>] | <a href="http://c133.org/log/tech/redhat/hooray_errata.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=hooray errata" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="good_discussion"><span class="tbox"> .: good discussion :: </span></a>
+		<div class="text">
+			<p>Sat down with Ed and Zack yesterday and basically did a mind-meld; we had an hour-plus-long braindump session where I let loose all of the ideas, concerns, and issues that I've been thinking about as far as desktop QA goes here at Red Hat.</p><p>John Flanagan dropped in towards the end of it, and he seems to be quite open to a lot of our ideas, which is awesome. Hopefully we can get the budget/machines allocated to implement the desktop testing lab that we want to set up; that would be perfect.</p><p>Number of times I've forgotten my cardkey at the new office: Two</p><p>Number of days since someone has passed out in the bathroom: Nine<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#good_discussion" title="Date link">13:08</a>] | [<a href="http://c133.org/log/tech/redhat" title="Category">tech/redhat</a>] | <a href="http://c133.org/log/tech/redhat/good_discussion.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=good discussion" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="ols_rocks"><span class="tbox"> .: ols rocks :: </span></a>
+		<div class="text">
+			<p>Daniel and I drove up with Chris Blizzard for OLS, and we've been here since Sunday. The conference is kicking *major* ass, and I've gotten to meet tons of awesome people.</p><p>The bourbon that Bdale and Keith picked up completely knocked me on my ass though. I was completely out of commission on Tuesday, and barely managed to recover for Wednesday's activities.</p><p>Canada. What more can I really say? Like home, but just different enough to fuck with me. It's cool here, though; the wifi from the balcony is sort of spotty, but otherwise the room is awesome. More alcohol than I thought could be consumed has been.</p><p>Trying to convince Steph to start blogging. No luck as of yet.</p><p>Daniel is cramming hard for some deadlines. Which sucks for him. I feel kind of weird, being alone out here on the balcony, knowing that everyone else is asleep already. Good time to blog, though.</p><p>Kind of missing home, oddly enough. Never been homesick like this, not since the parents moved me to Arizona. Also, my mind keeps wandering back to Libby.</p><p>::sigh::</p><p>Overall, though - surprising quantities of ass-kickery have shown up in my life lately, and I'm still frankly quite shocked at it. If only life could be this badass all the time.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#ols_rocks" title="Date link">13:08</a>] | [<a href="http://c133.org/log/tech" title="Category">tech</a>] | <a href="http://c133.org/log/tech/ols_rocks.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=ols rocks" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="hackergotchi_head"><span class="tbox"> .: hackergotchi head :: </span></a>
+		<div class="text">
+			<p>So I've taken the time out of my day to gimp up a <a href="http://c133.org/img/me-sexy.jpg" title="Me, about as sexy as I get.">picture</a> of myself to use as a hackergotchi head. It's not a particularly great pic, but I figured it had the most potential for hackergotchi status.</p><p>I like the way it turned out. Any other guys here on Planet KDE, if you take the time out to do this, <a href="mailto:clee@kde.org">send me the PNG file</a> and I'll upload it and get it set for you so that you too can have a floating disembodied head.</p><p>If you do decide to gimp yourself up then please note that the image should be about 64 pixels wide to fit properly. Anything from 60 to 80 pixels tall will work for the height, but let's try not to make the images _too_ large.</p><p>(And yes, I'll host the images here so that your web server won't melt.)<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#hackergotchi_head" title="Date link">13:08</a>] | [<a href="http://c133.org/log/tech" title="Category">tech</a>] | <a href="http://c133.org/log/tech/hackergotchi_head.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=hackergotchi head" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="sandro_read_this"><span class="tbox"> .: Sandro, read this :: </span></a>
+		<div class="text">
+			<p>Sandro Giessl: Your feed seems to be down. Can you fix it?</p><p>Thanks.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#sandro_read_this" title="Date link">13:08</a>] | [<a href="http://c133.org/log/tech" title="Category">tech</a>] | <a href="http://c133.org/log/tech/sandro_read_this.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=Sandro, read this" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="i_kick_ass"><span class="tbox"> .: I kick ass :: </span></a>
+		<div class="text">
+			<p>Tonight is rocking hardcore.</p><p>I spent about twenty minutes autotooling the 'nv' driver from the old monolithic X server tree, and convinced it to build under Daniel's Xizzle/Xorg tree.</p><p>After a bit more hacking around with the build system (to get it to properly generate the Makefiles in the nv dir, and to get the new NV driver module loaded into the libdrivers.a), it actually worked!</p><p>It loads the driver, and it sets the proper resolution, and everything!</p><p>Now the only thing missing is composite support. Which is a little out of my league, but I have faith that the guys at Sun working on it (yeah, I'm looking at you, Stu and Deron) will pull it off.</p><p>Damn, this has been a good night.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#i_kick_ass" title="Date link">13:08</a>] | [<a href="http://c133.org/log/tech/fdo" title="Category">tech/fdo</a>] | <a href="http://c133.org/log/tech/fdo/i_kick_ass.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=I kick ass" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="new_toy"><span class="tbox"> .: new toy :: </span></a>
+		<div class="text">
+			<p>Picked up a new toy yesterday, a Logitech USB 200 headset. Hooray for USB audio! I'm amazed at how nice it is. I'm not an audiophile by any means, but this headset is a lot better than I was expecting. And it works great under Linux, as well as OS X. I hear it even works nicely under Windows...</p><p>I love this stuff. Had fun trying to get everything to play to the headphones, but it wasn't too difficult. Highly recommended.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#new_toy" title="Date link">13:08</a>] | [<a href="http://c133.org/log/tech" title="Category">tech</a>] | <a href="http://c133.org/log/tech/new_toy.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=new toy" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="invincible"><span class="tbox"> .: invincible! :: </span></a>
+		<div class="text">
+			<p>I feel like the Russian hacker from Goldeneye. I AM INVINCIBLE! Over the course of one day, managed to wrangle IE into actually rendering my site halfway decently (which it should've done in the first place), and also finally figured out a solution to an annoying problem with Apache and customized header/footer templates for automatic indexing. If that doesn't make sense to you, good.</p><p>Other random things of coolness: Xcode has amazingly well-integrated CVS support. Apple kicks ass. Also, Safari kicks ass. I like Apple's implementation of the CSS2 text-shadow property in KHTML. I'm also thinking about redesigning my site once more since I've had the current design up for over a year now, and I'm bored with it. It's a pain in the arse, especially for cross-browser compatibility, and I'm itching to try out a few other look'n'feel combinations. DanielS has suggested that I should try to become a DD. I find this amusing, mostly because of how many discussions I've had with DanielS where I have ranted about how much I hate Debian. Good times.</p><p>update: <a href="http://c133.org/files/">check out</a> the customized output that I struggled for hours to achieve! Marvel at how much less cool it is than it should be!<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#invincible" title="Date link">13:08</a>] | [<a href="http://c133.org/log/tech" title="Category">tech</a>] | <a href="http://c133.org/log/tech/invincible.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=invincible!" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="my_own_personal_reason_to_hate_microsoft"><span class="tbox"> .: my own personal reason to hate Microsoft :: </span></a>
+		<div class="text">
+			<p>How's this for a reason?</p><p>I called up HP/Compaq, Dell, and IBM today. I can't get a notebook/laptop computer from any one of these manufacturers without paying for a Windows license.</p><p>That's right. I can't even get any of these systems blank, sans operating system. I explained to the guys over the phone - and especially the HP rep seemed sympathetic - but the problem is that Microsoft has strongarmed these manufacturers such that they can't ship any laptops without a Microsoft OS.</p><p>This is complete and utter bullshit. I'm just going to wipe the hard drive and put Linux on it anyway; I'd rather that the hard drive just came blank, as I don't expect any of the hardware guys to install Linux on it for me.</p><p>Ugh. I was hoping that one of these guys might be able to set themselves apart from the rest by satisfying this one wish. Looks like I was wrong.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/log/2004/Nov/19#my_own_personal_reason_to_hate_microsoft" title="Date link">13:08</a>] | [<a href="http://c133.org/log/tech" title="Category">tech</a>] | <a href="http://c133.org/log/tech/my_own_personal_reason_to_hate_microsoft.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=my own personal reason to hate Microsoft" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div id="right">
+	<div class="container">
+		<div class="mbox">
+			<span class="tbox"> .: about :: </span>
+			<div class="text">
+			<a href="mailto:clee@kde.org">Chris Lee</a><br />
+				KDE developer
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<div style="text-align: center; margin: 4px;">
+					<input type="hidden" name="cmd" value="_xclick" />
+					<input type="hidden" name="business" value="clee@kde.org" />
+					<input type="hidden" name="no_note" value="1" />
+					<input type="hidden" name="currency_code" value="USD" />
+					<input type="hidden" name="tax" value="0" />
+					<input type="image" style="border: 0px;" src="https://www.paypal.com/en_US/i/btn/x-click-but04.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" />
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="mbox">
+			<span class="tbox"> .: archives :: </span>
+			<div class="text">
+				<a href="http://c133.org/log/2004/Nov">2004-Nov</a><br /><br />
+				<a href="http://c133.org/log/?flav=rss"><img src="http://roughingit.subtlehints.net/images/xml.gif" alt="RSS" /></a>
+				<a href="http://c133.org/log/?flav=rss3"><img src="http://roughingit.subtlehints.net/images/rss30logo" alt="RSS3" /></a>
+			</div>
+			<div style="background-color: white; text-align: center">
+				<a href="http://roughingit.subtlehints.net/pyblosxom/"><img src="http://roughingit.subtlehints.net/images/pb_pyblosxom.gif" alt="pyblosxom" /></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--[if IE 6]>
+</div>
+<![endif]-->
+
+<div id="footer">
+	web site by <a href="mailto:clee@kde.org">clee</a>
+</div>
+
+</body>
+</html>

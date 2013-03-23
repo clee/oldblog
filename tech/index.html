@@ -1,0 +1,1102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>c133.org/blog : tech</title>
+<meta name="description" content="clee's blog" />
+<meta name="viewport" content="width=720" />
+<meta name="keywords" content="Chris Lee, KDE, freedesktop, SPC, developer" />
+<style type="text/css">
+a { text-decoration: none; }
+a:hover { text-decoration: none; color: #FFFF99; background: #00F}
+.title { font-size: 14pt; font-weight: bold; color: #336699; }
+.blosxomDate { display: block; font-weight: bold; font-size: 10pt; text-align: right; color: #cccccc; background-color: #2f343a; padding: 2px; }
+.blosxomTitle { font-size: 13pt; font-weight: bold; color: #000000; }
+.blosxomTime { text-decoration: italicize; color: #336699; }
+</style>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel="alternative stylesheet" type="text/css" href="/basic.css" title="Basic" />
+<link media="only screen and (min-device-width: 640)" rel="alternative stylesheet" type="text/css" href="/fancy.css" title="Fancy" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="index.rss" />
+
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="/ie6hacks.css" />
+<![endif]-->
+
+</head>
+
+<body>
+<!--[if IE 6]>
+<div id="content">
+<![endif]-->
+<div class="header">
+	<a class="header" href="http://c133.org/blog">c133.org/blog : tech</a>
+</div>
+<div class="nav">all clee, all the time</div>
+<div id="left">
+<span class="blosxomDate">Fri, 21 Sep 2007</span>
+<div class="container">
+	<div class="mbox">
+		<a id="announcing_mobilepushr"><span class="tbox"> .: announcing MobilePushr :: </span></a>
+		<div class="text">
+			<p>When I first heard that the iPhone had a camera built-in, as well as WiFi, those two features triggered the following thought:</p><p><blockquote>It would be really hot if you could upload the pictures from the camera directly to Flickr.</blockquote></p><p>When I got my iPhone, I figured out a workflow that I could use to post pictures from the phone to my Flickr account, but it <strike>totally sucked balls</strike> was less than optimal. For each picture I wanted to upload, I had to open the picture in the Photos app and email it to a special address that Flickr had associated with my account.</p><p>Negatives of this approach? Impossible to use for more than a couple of images at a time, primarily, but also, annoyingly, the Mail app on the iPhone scales and recompresses the JPEG images before sending - and it strips them of their EXIF data, too.</p><p>So I was mildly displeased, but there was a way I could get it to work, kinda.</p><p>Then the iPhone got cracked wide open. People started figuring out how to write third-party apps and get them installed on their iPhones, and - to be honest - the UI for it, via Installer.app, is - even though it's not from Apple - better than anything I've seen on any other mobile phone, ever.</p><p>The Friday before last (September 7th), I decided it was time to take matters into my own hands. Finally learn Objective C. Start writing my dedicated "Push all of the images in my Camera Roll to Flickr, right now dammit" application. And I got a pretty good start! Got the toolchain to build working iPhone apps, and that only took a few hours. Started reading through Flickr's API documentation. Started implementing some functions that didn't require authorization to call - learning how to use Flickr's REST API, basically. Once the first couple of unauthenticated calls worked and did what I expected, I knew it would only be a matter of time before I had my app working.</p><p>And then someone pointed me to <a href="http://http://code.google.com/p/iflickr/">iFlickr</a>.</p><p>My first thought was "Dammit, somebody beat me to it." And I was a little depressed for a bit.</p><p>I downloaded it and tried to get it working. No offense to the iFlickr devs, but they clearly didn't put a lot of thought into the user experience (or if they did, I posit that their ideas about "good user experience" work completely differently from mine). I didn't end up getting it to work, but it's open-source, right?</p><p>Naturally, my next thought: "Well, I've been working on mine, and this doesn't really do what I wanted. But... maybe I can steal some of their code at least!"</p><p>And then I looked at the code.</p><p>My eyes still burn a little bit from that. That ... that was not a good idea. I've had much better ideas in the past.</p><p>I worked on this for the next few nights, realized that I could completely avoid the messy minitoken crap by using the "Desktop app" authentication mode from Flickr, deleted all of my code that dealt with mini-tokens, and the other night, I finally got it to actually upload pictures to my Flickr account. (My friend <a href="http://cliffhacks.blogspot.com/">Cliff</a>'s help was so valuable as to be incalculable.)</p><p>I'll post more technical details later, but the important thing is: <a href="http://mobilepushr.jottit.com/">MobilePushr</a> is out. The UI is going to get a lot of love in the next few days, because the current one doesn't provide nearly enough feedback, but as of right now, MobilePushr lets me do something that I've wanted for almost three months. </p><p>I can push my JPEGs directly from my iPhone to my Flickr account with the push of a single, giant red button. (And so can you! If you go download it and install it on your iPhone, that is. Assuming you have an iPhone.)</p><p>Also, of course, MobilePushr is Open Source / Free Software, released under the GPLv2. If you use git, you can look at my code by cloning git://mg8.org/MobilePushr and poking around.</p><p>The really awesome thing about all of this is that, through Flickr, I can see how many people have given my app permission to link to their account, and in the first twelve hours alone over a thousand people have activated support for MobilePushr on their Flickr accounts.</p><p>I don't even have words to describe how awesome that makes me feel.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2007/Sep/21#announcing_mobilepushr" title="Date link">04:18</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/announcing_mobilepushr.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=announcing MobilePushr" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Mon, 11 Jun 2007</span>
+<div class="container">
+	<div class="mbox">
+		<a id="did_you_know"><span class="tbox"> .: did you know? :: </span></a>
+		<div class="text">
+			<p><a href="http://www.codemonkey.org.uk/projects/x86info/">x86info</a> is awesome.</p><p>Unfortunately, <a href="http://kernelslacker.livejournal.com/80434.html">SourceForge is not so awesome</a>.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2007/Jun/11#did_you_know" title="Date link">19:52</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/did_you_know.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=did you know?" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Tue, 07 Nov 2006</span>
+<div class="container">
+	<div class="mbox">
+		<a id="yet_another_python_rant"><span class="tbox"> .: yet another python rant :: </span></a>
+		<div class="text">
+			<p>I hit another case of "Python really makes me angry" today and I thought I would share it with you all, since I know how much you love reading about things that enrage me.</p><p>I have a chunk of code that (while being significantly more complex) looks like this:<br /><pre>def baz():<br />    print kitties # This works fine.</p><p>def bar():<br />    print kitties # This one throws an exception!</p><p>    kitties = 'delicious' # The exception is because of this.</p><p>def foo():<br />    stuff = {'kitties': 'squishy'}</p><p>    for k, v in stuff.iteritems():<br />        globals()[k] = v</p><p>    baz()<br />    bar()<br /></pre></p><p>This is another example of Python's scoping being weird, and in my opinion, broken.</p><p>Let me explain, in case you didn't bother copy & pasting that into a python shell and running it.</p><p><code>baz()</code> will execute properly. <code>bar()</code> will not. But the error you get from <code>bar()</code> is worthless - it tells you that you're trying to read from an unassigned local variable, except you're trying to read from a global variable. The problem I have is not that <code>bar()</code> fails - it's that it is inconsistent with <code>baz()</code> working. I realize that adding a <code>global kitties</code> makes <code>bar()</code> work properly; but I think that in this case, the error should really be when you try to reassign a global variable that hasn't been declared as global.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2006/Nov/07#yet_another_python_rant" title="Date link">16:40</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/yet_another_python_rant.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=yet another python rant" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Fri, 27 Oct 2006</span>
+<div class="container">
+	<div class="mbox">
+		<a id="implementing_ideas"><span class="tbox"> .: implementing ideas :: </span></a>
+		<div class="text">
+			<p>I like getting around to implementing the various ideas that I bounce back and forth inside my skull.</p><p>One of those ideas that I had for a long time was to solder a PS/2-&gt;USB converter directly into an IBM Model M keyboard, along with a USB plug so that I could just swap out USB cables to plug the keyboard into the computer.</p><p><a href="http://www.flickr.com/photos/12031124@N00/sets/72157594346862373/">I have finally done that</a>, after some <a href="http://zevv.nl/experiments/ibm-usb/">inspiration from zevv</a>, a few choice purchases at Fry's Electronics, and a few borrowed parts from my friend Cliff.</p><p>I have to say, this kicks way more ass than even I had hoped. (ajax, eat your heart out.)</p><p>Still on the list:<br /><ul><li>finish the Qt4 frontend for HandBrake</li><li>write my own email client that doesn't suck balls</li><li>write my own AIM client that doesn't suck balls</li><li>hack up some apps for Qtopia/Opie/whatever for my shiny new iPaq 3670</li></ul></p><p>I know there's more than that, but those are the ones that are currently taking up the most brainspace, so I'm going to have to get to them sometime.</p><p>Due to United Airlines sucking balls, <a href="http://airlied.livejournal.com/">Dave Airlie</a> crashed at my place last night after they called back and cancelled his flight from SFO to Sydney. I've said this before, although maybe not on this blog, but United are a bunch of cockbags. They have fucked up at least one leg of every single trip of mine that they've ever been involved in. In any case, I know far too many foreigners named Dave.</p><p>Also, I've been growing <a href="http://www.flickr.com/photos/12031124@N00/280500553/">this</a> out for the first time ever. Looks like I'm going to have to update my various avatars...<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2006/Oct/27#implementing_ideas" title="Date link">07:02</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/implementing_ideas.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=implementing ideas" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sun, 22 Oct 2006</span>
+<div class="container">
+	<div class="mbox">
+		<a id="screeching_handbrake"><span class="tbox"> .: screeching handbrake :: </span></a>
+		<div class="text">
+			<p>I really love it when I can easily find something that bothers me in a piece of software, dive into the source, and start fixing things.</p><p>That's what I've been doing lately with this <a href="http://handbrake.m0k.org/">little DVD ripping app called HandBrake</a> - it's a cross-platform GPL DVD ripper that makes it almost painfully easy to take a movie from a DVD and turn it into a file that you can watch whenever the need strikes you.</p><p>There are some problems, though. Right off the bat, there is the issue that (when ripping a DVD) libdvdread spews out hundreds of lines of output, warning me that a value isn't 0 and it should be. It's not fatal, but it certainly is annoying, so I whipped up <a href="http://c133.org/tmp/libhb-dvd.diff">this patch</a> up to fix it.</p><p>Also, I don't have a video iPod at the moment, or a Sony PSP (and I don't see myself buying the latter anytime soon, but you know... if one were to fall into my lap, I'd probably use it and enjoy the hell out of it.) Anyway, not owning one of these devices, I'm more interested in HandBrake as a way to make high-quality compressed archives of my DVD movies that I can watch on the HDTV in the living room. There's a problem, though; HandBrake scales the picture by default as it transcodes it.</p><p><a href="http://c133.org/tmp/enc-pixelratio.diff">Not anymore</a>, it doesn't. Now it has support for (optionally) embedding the anamorphic pixel ratio into the output file, and can preserve the original DVD video frames. Which means, with x264 at least, a reasonable performance increase of about 15%. Not too shabby!</p><p>Unfortunately, the only GUIs for HandBrake are on Mac OS X and BeOS. Now, I love BeOS. Haven't used it in years, though, and I don't even think it'll run on my hardware; Haiku still isn't quite there yet, either, but I'm keeping tabs on it. What I really wanted is a Linux UI for HandBrake.</p><p>So, I've been hacking on one.</p><p><img src="http://c133.org/qhandbrake-1.png" alt="Qt4 HandBrake UI" /></p><p>Stay tuned for more on this...<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2006/Oct/22#screeching_handbrake" title="Date link">09:16</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/screeching_handbrake.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=screeching handbrake" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Wed, 18 Oct 2006</span>
+<div class="container">
+	<div class="mbox">
+		<a id="aoe_is_hotness"><span class="tbox"> .: aoe is hotness :: </span></a>
+		<div class="text">
+			<p>I've been playing with ATA over Ethernet on my home network and I have to say, it is pretty damn sweet.</p><p>In fact, it would be absolutely perfect if I could use AOE to share drives to my media center, and then use ZFS on that machine. Unfortunately, Linux doesn't have ZFS, and OpenSolaris doesn't seem to have AOE yet. (The Coraid site has a Solaris driver, and they claim it works on Solaris 7+, but there is no source and I don't happen to have an OpenSolaris machine to test it on at the moment.)</p><p>But - the ability to pool together all of my disparate disks into one gigantic volume is awesome. It's like Voltron, but with hard drives instead of robots.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2006/Oct/18#aoe_is_hotness" title="Date link">05:03</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/aoe_is_hotness.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=aoe is hotness" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Tue, 08 Aug 2006</span>
+<div class="container">
+	<div class="mbox">
+		<a id="leopard_features"><span class="tbox"> .: Leopard features :: </span></a>
+		<div class="text">
+			<p>I was lucky enough to get a ticket to attend WWDC this year, and I've been looking over the session schedule to see what the sessions are, when I ran across this interesting little blurb:<br /><blockquote>DTrace, an open source project which provides insight into the interaction between your code and the OS kernel, is now available as part of Leopard. This session will explain how kernel developers can both take advantage of, and extend, DTrace's functionality to help debug and optimize low-level code.</blockquote></p><p>DTrace in MacOS X? Hell yes!<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2006/Aug/08#leopard_features" title="Date link">07:57</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/leopard_features.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=Leopard features" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Fri, 24 Feb 2006</span>
+<div class="container">
+	<div class="mbox">
+		<a id="for_the_record"><span class="tbox"> .: for the record :: </span></a>
+		<div class="text">
+			<p><a href="http://airlied.livejournal.com/22700.html"><img src="http://stat.livejournal.com/img/userinfo.gif" alt="user info" />airlied</a>: I'd be a lot less annoyed with companies like ATI if they shipped drivers (even proprietary ones!) that actually supported their latest cards.</p><p>The R5xx-series cards have been out for <i>MONTHS</i> now and there's still no acceleration, 2D <b>or</b> 3D, Open Source <b>or</b> proprietary. Good job, ATI!</p><p>Anyway. I'm excited about the way that things are headed, and I'm really glad that other people are getting excited, too.</p><p>To the people who were wondering - the "AI" in "AIGLX" stands for Accelerated Indirect - it's basically required to do a lot of neat things like using the local card to render OpenGL from a remote application. It also enables all sorts of kick-ass effects like the new bling in metacity and compiz (which doesn't work yet, but it's only a matter of time).<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2006/Feb/24#for_the_record" title="Date link">07:02</a>] | [<a href="http://c133.org/blog/tech/fdo" title="Category">/fdo</a>] | <a href="http://c133.org/blog/tech/fdo/for_the_record.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=for the record" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Fri, 30 Dec 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="if_0"><span class="tbox"> .: #if 0 :: </span></a>
+		<div class="text">
+			<p>There is a lot of really useless code sitting in Xorg today.</p><p>I was playing with a CVS checkout and noticed a large chunk of one of the source files was commented out with #if 0; so, this piqued my curiosity and I decided to figure out how many blocks of code are commented out with #if 0 in the server, driver, and lib trees.</p><p>The current count, in CVS HEAD, as of about five minutes ago:</p><p><table><tr><th>module</th><th>blocks of #if 0 code</th></tr><tr><td>libs</td><td>56</td></tr><tr><td>server</td><td>408</td></tr><tr><td>drivers</td><td>648</td></tr></table></p><p>All combined, that's 1112 blocks of code completely disabled at compile time just sitting there in the tree.</p><p>Haven't bothered checking any of the other modules; I'm sure there's more in apps but I don't really think it matters for docs or fonts. Still. That's a lot of useless crap.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Dec/30#if_0" title="Date link">01:21</a>] | [<a href="http://c133.org/blog/tech/fdo" title="Category">/fdo</a>] | <a href="http://c133.org/blog/tech/fdo/if_0.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=#if 0" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Tue, 13 Dec 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="tungsten_e2"><span class="tbox"> .: tungsten e2 :: </span></a>
+		<div class="text">
+			<p>My Palm arrived yesterday, finally.</p><p>I've been playing with it, and it seems to be a really cool device, barring a few issues. It feels very solid, and I like that. What I dislike is the software.</p><p>Don't get me wrong - I love PalmOS, but PalmOS 5 is trying to do things it's just not capable of and Graffiti 2 makes me want to throw my shiny new toy into a wall. For example, the hack that the PalmOS guys are using for showing focus selection? It breaks with at least half of the color themes that they ship on the device, because it doesn't draw the halo properly on the buttons. And the fact that I can't create my *own* color theme annoys me, too.</p><p>I <b>need</b> to figure out some way to get Graffiti 1 working on this thing. I'm using a demo version of TealScript for now but it's a little on the slow side and I don't really like the idea of paying $30 for it, especially since it's *not* a faithful reproduction.</p><p>Sync works great over Bluetooth to my Mac mini, which is pleasing. The pilot-xfer command-line utilities on Linux seem to work very well too, which is good; I haven't tried any other utilities yet, but I will soon.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Dec/13#tungsten_e2" title="Date link">18:40</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/tungsten_e2.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=tungsten e2" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Thu, 10 Nov 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="vonage"><span class="tbox"> .: vonage review :: </span></a>
+		<div class="text">
+			<p>I decided that I was sick of paying too much money for my cell phone and so I've initiated a transfer of my cell phone number from Sprint/Nextel to Vonage.</p><p>Vonage assigned me a temporary number in the meanwhile, which is cool, and I've been playing with the service.</p><p>I have to say that I'm <b>really</b> pleased with it so far.</p><p>Installation was literally a snap - I unpacked the router they sent me (the Linksys RTP300), plugged in the power, and scratched my head over what I should do next. I figured that I'd probably have to do some port forwarding magic or something if I wanted it to work from behind the router, so I punted on that and went to Target to pick up a handset since I haven't ever owned a "real" phone.</p><p>Bought a $9 handset at Target, a GE "Slimline" thing that has call waiting, caller ID, three-way calling, and other things that are insane for a $9 phone. Anyway. I brought it back home, plugged it (and the ethernet cable) into my RTP300, and then mentally prepared myself for the frustration of having to do magic to get my main router to let the new toy do its thing.</p><p>I was a little disappointed, actually.</p><p>It just worked. No port forwarding, no iptables hackery, no headaches, no frustration - the lights flickered in a few weird patterns for a minute or so, and then I picked up the handset and I got a dial tone. I dialed my phone number and it asked me to log in to my voicemail.</p><p>Consider me impressed. Not to mention that the web-based UI for managing the Vonage account is really really sweet - I have it set to send me email when I get a new voicemail, and you can check your voicemails from the web (they show up as WAV files), plus it's dead simple to set up call forwarding and configure the different timeouts for voicemail/call forwarding/etc.</p><p>So, I don't know about the other routers - I've read lots of nightmare story reports from people using other hardware and things - or other phones or other VoIP providers, but so far I'm pretty damned impressed with Vonage. Oh, and for $25/month, I get unlimited calls to anywhere in North America, including Canada, and their international rates are pretty good, too. I called <a href="http://fooishbar.org/">daniels</a> up the other day and the conversation - which lasted for almost an hour - cost less than a combo meal at Burger King.</p><p>Pretty sure the future is made out of <b>awesome</b>.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Nov/10#vonage" title="Date link">02:58</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/vonage.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=vonage review" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sun, 16 Oct 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="planet_update"><span class="tbox"> .: planet update :: </span></a>
+		<div class="text">
+			<p>For those of you who are syndicated on Planet KDE and also care about your bandwidth: Please pay attention to this message.</p><p>By default, Planet KDE will now show any images that you include in your blog. If you do not wish for images from your blog to show up on the Planet (which I can understand, since we do use up quite a bit of bandwidth), now you just have to do:<br /><pre>&lt;img class="hidefromplanet" src="foo.png" /&gt;</pre></p><p>The old class="showonplanet" is still around, but it's irrelevant now and may be removed in the future.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Oct/16#planet_update" title="Date link">00:03</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/planet_update.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=planet update" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Fri, 07 Oct 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="dogtail_unleashed"><span class="tbox"> .: dogtail unleashed :: </span></a>
+		<div class="text">
+			<p>Today is a pretty cool day for me because a project I've been working on at work is finally released.</p><p><a href="http://people.redhat.com/zcerza/dogtail/"><img class="rapemewithachainsawthanks" src="http://people.redhat.com/zcerza/dogtail/images/dogtail01.jpg" alt="Dogtail!" /></a></p><p>dogtail is a framework written in Python which makes it easy to write scripts to automate graphical applications. It uses AT-SPI which means that (for now) it doesn't work with KDE, but I fought the good fight to make sure that it has no GNOME dependencies so that hopefully there will be a chance of KDE adopting it in the future. Now that we've finally gotten the release out the door, I plan to track KDE svn and write scripts for KDE4 apps. Ideally, we'll have KDE4 support before KDE4 is actually released.</p><p>(I know that there's a tool from <a href="http://wwww.klaralvdalens-datakonsult.se/">KDAB</a> which allows one to automate KDE apps, but it's not Open Source and it only works with KDE; dogtail supports anything that we can see through AT-SPI, which includes OpenOffice.org and Mozilla-based applications as well as, hopefully, KDE4.)<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Oct/07#dogtail_unleashed" title="Date link">12:31</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/dogtail_unleashed.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=dogtail unleashed" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Wed, 21 Sep 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="networkmanager_and_kde"><span class="tbox"> .: NetworkManager and KDE :: </span></a>
+		<div class="text">
+			<p><a href="http://www.kdedevelopers.org/node/1465">Fab</a>: NetworkManager actually has a pretty well-designed separation between the front-end and the back-end; the only problem stalling us from being able to do cool things with it right now is that we have no working DBUS bindings for KDE3 (so nobody can easily write a Kicker applet to interface with NetworkManager to use on their desktop <b>today</b>), and KDE4 doesn't actually have anything usable at this point, whatsoever.</p><p>I brought this up at aKademy - aseigo and I were basically ready to go ahead with it but we got sidetracked with window icon previews in the window list on the desktop pager hover tooltip. (Try saying that five times fast.)</p><p>In theory, somebody could write the applet using the DBUS API from C, but the current Qt bindings in the DBUS tree are pretty much worthless, so it's not going to be pretty either way.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Sep/21#networkmanager_and_kde" title="Date link">17:14</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/networkmanager_and_kde.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=NetworkManager and KDE" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sun, 11 Sep 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="robot_body"><span class="tbox"> .: would you put your brain in a robot body? :: </span></a>
+		<div class="text">
+			<p><a href="http://wadejolson.blogspot.com/2005/09/where-in-world-is-carmen-sandiego.html">Wade</a>: No, I don't have a robot answering my email. My robots are busy preparing for the ... I mean, uh, what robots? I don't have any robots.</p><p>I do have three totally awesome computers now, though (not including my work laptop). The first one is my Mac mini, which rules, but it's not the focus of this entry.</p><p>Over the past week or so, I'd run into some really odd stability issues with my AMD64 box. I decided to go to CompUSA and pick up a new motherboard, since the last issue I had with an AMD64 machine was also the mobo. Bring the new mobo back home. Remove the old one, move parts over to new one, hook up power connectors, flip the switch, and ... nothing.</p><p>The damned thing didn't even POST.</p><p>Somewhat frustrated, I decided to work on assembling my other new system. I've had a spare CPU, some extra RAM, and a slew of video cards laying around for a while now, so the only thing I really needed to pick up was a new case and a motherboard for this box. It's an "old" AthlonXP 1700+ - I figure it's probably worth me keeping a system around that can do AGP and run fast enough to prevent me from throwing it out the window.</p><p>The assembly on my new system went pretty well, until the part where I attempted to attach the power cable. The power supply I was using was a 24-pin, designed for the power requirements of the newer AMD64 systems. Normally, it wouldn't be too hard to plug in a 24-pin cable into the 20-pin socket on the motherboard, except that the mobo I picked up happens to have the IDE pins right next to the ATX pins.</p><p>And there was much frustration.</p><p>I was about to give up, but for some reason I decided to read the manual for the power supply in the new case that showed up, and if you look at page 3 in <a href="http://www.antec.com/pdf/manuals/SmartPower2_En.pdf">the manual</a>, you should see the picture that made my night.</p><p>The other power supply can break off the extra four pins so that I can use it on the motherboard.</p><p>I returned to CompUSA and got a replacement for the busted motherboard, and brought it home and set it up, and this one actually works, so now I've got both systems up and running beautifully.</p><p>My only issue now is that I need a DVI/USB KVM.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Sep/11#robot_body" title="Date link">05:49</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/robot_body.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=would you put your brain in a robot body?" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Wed, 07 Sep 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="thanks"><span class="tbox"> .: thanks, Antonio :: </span></a>
+		<div class="text">
+			<p>Everybody else has been saying this on mailing-lists and whatnot, but I figured that it deserved saying on the Planet, too.</p><p>Antonio, aKademy 2005 rocked hardcore thanks to you and the LiMa guys. You guys kick ass. I didn't think it'd be possible to top Kastle, but you guys did it.</p><p>To next year! Helio, you ready for aKademy in Brazil? ;)<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Sep/07#thanks" title="Date link">01:06</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/thanks.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=thanks, Antonio" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Fri, 12 Aug 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="magical_goodies_creator"><span class="tbox"> .: you exactly told me it was a magical goodies creator :: </span></a>
+		<div class="text">
+			<p>Adam: I have a <a href="http://www.kdedevelopers.org/node/1320">tax-free holiday</a> every day of the week; it's called "Living in New Hampshire."</p><p>(There's no sales tax in this state, for the readers out there who are confused.)</p><p>Work on the tdfx EXA support is still ongoing; I have the framebuffer addresses properly set up now, but my blit and solid fill routines are completely hosed. At least I have an idea of how things are *supposed* to work now.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Aug/12#magical_goodies_creator" title="Date link">12:12</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/magical_goodies_creator.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=you exactly told me it was a magical goodies creator" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Wed, 10 Aug 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="way_to_go"><span class="tbox"> .: way to go, sparks, you broke the monitor <i>and</i> you're dead :: </span></a>
+		<div class="text">
+			<p>Lots of things going on lately.</p><p>First off, most recently, I started hacking on <a href="http://c133.org/tmp/tdfx-exa.patch">EXA support for the tdfx driver</a> - it doesn't do much yet, except for display things wrong and crash, but hopefully I'm not too far from it working properly.</p><p>Second, I finally coerced a graphic designer friend of mine into coming up with a new layout for my site. It's not live yet, because I'm not quite happy with it, but it's pretty close to ready (I think) - <a href="http://c133.org/c133/">take a look</a> and <a href="mailto:clee@c133.org">let me know</a> what you think. (Yeah, I know, it's slow. It's using multiple layers of translucent PNGs, some of which are position: fixed. I prefer to think of it as "an opportunity for KHTML optimization.")</p><p>Third, I have been hacking on the <a href="http://blogs.qtdeveloper.net/archives/2005/07/26/">Qt4 BitTorrent client from Andreas</a>, and it's really cool. There's a very small, slow memory leak in it, though, which I have to find and destroy.</p><p>Other than that, not too much going on. I'm excited about aKademy - only a couple of weeks away!<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Aug/10#way_to_go" title="Date link">13:33</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/way_to_go.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=way to go, sparks, you broke the monitor <i>and</i> you're dead" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Wed, 20 Jul 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="yes,_carl"><span class="tbox"> .: yes, carl :: </span></a>
+		<div class="text">
+			<p>Stroking is hard. So hard.</p><p>Every time I hear the word 'stroke' from now on, I'm going to hear keithp purr. That disturbs me to no end.</p><p>In other news, the DDC at OLS has been a lot of fun. I'm going to have to disagree with chouimat about a few things - namely, I think that Xgl is extremely sexy, and has a hell of a future, and while it's true that the vast majority of the talks here are GNOME-related or have a GNOME bias... it's because we are vastly outnumbered on this side of the pond, and you can count the number of KDE developers at this conference on one hand.</p><p>George Staikos was here for a couple of hours, I've been here for the DDC but not OLS, chouimat was here (but let's face it, you haven't been active in KDE lately, chouimat, and neither have I), and Alexander Dymo is here and gave a talk about KDevelop. We're not exactly taking over here. We need more of a presence at these shows, people. It's important.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Jul/20#yes,_carl" title="Date link">02:05</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/yes,_carl.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=yes, carl" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Tue, 12 Jul 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="more_cowbell"><span class="tbox"> .: more cowbell :: </span></a>
+		<div class="text">
+			<p>I may be abusing my 'tech/KDE' category with this entry, but so be it.</p><p>A <a href="http://www.more-cowbell.org/">new tagging application called 'cowbell'</a> is out and it looks pretty boring. Reading through it I was mostly uninterested until I hit this part:</p><p><blockquote>It requires the Mono runtime, Gtk#, and TagLib to install and run.</blockquote></p><p>Holy crap! GTK/GNOME apps using evil KDE technology! THE SKIES THEY ARE FALLING I TELL YOU.</p><p>Seriously though, good on them. <a href="http://developer.kde.org/~wheeler/taglib.html">TagLib</a> is good stuff, and I'm glad to see that they're not reinventing the wheel. More projects need to use it.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Jul/12#more_cowbell" title="Date link">04:46</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/more_cowbell.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=more cowbell" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Fri, 24 Jun 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="ikaruga"><span class="tbox"> .: ikaruga :: </span></a>
+		<div class="text">
+			<p>Somehow, I just spent four hours playing Ikaruga.</p><p><a href="http://www.thebestpageintheuniverse.net/c.cgi?u=ikaruga">They</a> <a href="http://www.gamespot.com/gamecube/action/ikaruga/review.html">weren't</a> <a href="http://www.gamecritics.com/review/ikaruga/main.php">kidding</a>. This game is hard. Holy shit, this game is hard. I don't think I've ever played a game where it took me four hours to get to the THIRD STAGE before. This game rules.</p><p>I don't think I'll be sleeping this weekend.</p><p>(oh, and props to mpyne, who kicks *major* ass for dropping Ikaruga to me in the mail. The note he placed in the case reads "Let me know how Level 3 is. I only ever made it to the boss of Level 2." Holy shit this game is hard.)<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Jun/24#ikaruga" title="Date link">21:19</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/ikaruga.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=ikaruga" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Wed, 22 Jun 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="wireless_future"><span class="tbox"> .: wireless future :: </span></a>
+		<div class="text">
+			<p>(responding to <a href="http://www.chipx86.com/blog/archives/000100.html">ChipX86</a>)<br />Dude. One word.</p><p>Batteries.</p><p>Ok, to be slightly less cryptic: Wireless devices won't ever really replace their wired counterparts until they no longer require battery replacement to run. Batteries that recharge by gyroscopic motion? Ok, cool. Batteries that recharge by quantum phase induction? Hey, even if I just made it up, it sounds cool, and as long as it means that I don't have to put new batteries in when the current ones die, I'm all over it.</p><p>The main reason I don't have any wireless peripherals right now is the battery issue. I've almost talked myself into getting one of the Logitech mice that recharges on the base station - that's pretty close to my ideal scenario. It takes the whole "there's a battery inside" detail and makes it completely irrelevant.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Jun/22#wireless_future" title="Date link">03:08</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/wireless_future.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=wireless future" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sun, 12 Jun 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="build_system_notes"><span class="tbox"> .: build system notes :: </span></a>
+		<div class="text">
+			<p>We had a discussion in #kde-devel earlier about what KDE's requirements for a build system are. What are the current problems we have with autoconf/automake/libtool? What features do they provide that we really care about? How hard would it be to replace any/all of them with things that suck less?</p><p>I took notes of the discussion. They're below; I'd like to get more feedback on this.</p><p>(One of the first points that I'm sure someone will make is "auto* is cross-platform! We need to support KDE on platforms that aren't Linux!" etc. Look, we realize this. However, auto* provides lots of problems for us on platforms we do care about, including MacOS X and Windows. (Ask RangerRick or js about them on IRC, or email them.)</p><p>Just because we're using auto* and friends doesn't mean that our code works; as a matter of fact, RangerRick noted that so far, all of his issues with the Mac port of the work-in-progress KDE4 have been build issues, and none of them have been code-related yet.  </p><p>This is clearly a problem and since KDE4 is an aggressive new major release, we should solve it in the KDE4 timeframe. We don't want to have to wait until KDE5 for a build system that doesn't suck, do we?</p><p>Without further ado, the notes from the discussion.</p><p>Must support:<br /><ul><br /><li>generating binaries (duh)</li><br /><li>generating shared libs (on all ELF platforms + MacOS X; Windows?)</li><br /><li>icon installation</li><br /><li>uic, moc, KConfigXT, etc</li><br /><li>GCC visibility</li><br /><li>automatic dependency resolution</li><br /><li>manual hints for dependency resolution</li><br /><li>flex/bison</li><br /><li>non-recursive (flat) builds</li><br /><li>--enable-final</li><br /><li>builddir != srcdir</li><br /><li>simple to the point of being learnable within 5 minutes</li><br /><li>kdeinit support (?)</li><br /><li>multiple build targets (libfoo, libbar, libbaz) in one file</li><br /><li>--compile-slots, like in unsermake</li><br /><li>pkg-config support</li><br /><li>support rpath sanely</li><br /><li>ability to link & run uninstalled binaries</li><br /><li>easily integrated into KDevelop</li><br /><li>'admin' needs to be shipped in KDE instead of in src of each app (if we keep the 'admin' dir, that is)</li><br /></ul></p><p>Would be nice, but not necessary:<br /><ul><br /><li>having a standard and distributed build system and test suite</li><br /><li>ability to build from svn:/trunk/KDE</li><br /></ul></p><p>Thoughts?<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Jun/12#build_system_notes" title="Date link">22:34</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/build_system_notes.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=build system notes" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Wed, 08 Jun 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="cool_interview"><span class="tbox"> .: cool interview :: </span></a>
+		<div class="text">
+			<p><strike>Matt Harrison sent me a link to a <a href="http://panela.blog-city.com/interview_with_kde_developer_ivor_hewitt.htm">cool interview</a> with Ivor Hewitt, one of the guys working on KHTML lately.</strike></p><p>Looks like the interview has been <a href="http://panela.blog-city.com/removed_interview_with_ivor.htm">taken down</a>. Maybe it'll come back up soon.</p><p>Ivor, do you have a blog? Because you should. Planet KDE could use some KHTML blogging love...<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Jun/08#cool_interview" title="Date link">15:46</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/cool_interview.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=cool interview" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Mon, 23 May 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="I_blame_ajax"><span class="tbox"> .: I blame ajax :: </span></a>
+		<div class="text">
+			<p><b> * clee</b> kicks ajax<br />[clee] dammit, man. I really want a usable Expose feature. Like, yesterday would have been good.<br />[ajax] oh yeah, totally my fault<br /><b> * clee</b> blames you.<br />[ajax] why yesterday?<br />[clee] ajax: well, yesterday would have been good. today would have been acceptable. but if it gets here tomorrow, that's not soon enough.<br /><b> * clee</b> sighs<br />[ajax] i was thinking maybe there was some event yesterday<br />[clee] hahaha<br />[clee] no.<br />[ajax] like you were trying to show off X to some hottie in the coffee shop or something<br />[clee] hahahaha<br />[daniels] haha<br />[clee] and she whips out a Mac and she's like "Let's see your network-transparent windowing system do THIS!" and hits F9?<br />[ajax] but then she's all "shit boy, five year old acceleration architectures ain't gonna get you any poon"<br />[clee] yeah, happens to me all the time<br />[ajax] *smack*<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/May/23#I_blame_ajax" title="Date link">01:25</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/I_blame_ajax.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=I blame ajax" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Wed, 11 May 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="vmware_update"><span class="tbox"> .: vmware update :: </span></a>
+		<div class="text">
+			<p>Just thought I'd post a quick update about my situation re: my computer at home, since I know you all care so much.</p><p>It turns out, after wiping my partition table and starting over from scratch and getting Linux back up (which took all of about ten minutes), Windows installed fine from the SATA DVD drive.</p><p>I have no idea how this is possible - <a href="http://www.windowsitpro.com/Article/ArticleID/41058/41058.html">this page says</a>, and I quote:</p><p><blockquote>Out of the box, no current Windows version, including Windows Server 2003, supports SATA drives.</blockquote></p><p>My best guess is that the BIOS enables some sort of PATA emulation that Windows can use to find that drive. That's the only thing that makes sense.</p><p>And I was a little hard on VMware, to be honest. I mean, I was using a feature that <a href="http://www.vmware.com/support/ws5/doc/disks_instraw_ws.html">they specifically warn against most people using</a>, while running 32-bit VMware on a 64-bit (unsupported variant of a) host OS. I'm reminded of a quote here... </p><p><blockquote>People who do stupid things with hazardous materials often die.</blockquote></p><p>Granted, I didn't exactly die, but I think it somewhat applies.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/May/11#vmware_update" title="Date link">15:00</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/vmware_update.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=vmware update" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sat, 07 May 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="unexpected_results"><span class="tbox"> .: unexpected results :: </span></a>
+		<div class="text">
+			<p>Red Hat, my employer, has a site license for VMware. (Well, either a site license, or an assload of Workstation licenses, I'm not really sure what the details are.)</p><p>I decided "Hey, why not play with the new release? You've got new hardware. Maybe VMware will run acceptably fast on it!"</p><p>Man, what a fucking brilliant idea that was.</p><p>Backstory: I haven't booted Windows in a few months, not since Doom3 came out and wasn't available initially on Linux. However, I have some shiny new devices in the new box, including a SATA DVD burner, which so far doesn't seem to work with Linux very well. Ubuntu's kernel enables SATA ATAPI support, which Jeff Garzik tells me is a bad naughty thing of them to do since it's not ready yet. Which results in my ability to *see* the drive on /dev/scd0, if the planets align properly, but I can't actually use it for much.</p><p>This machine doesn't have a floppy drive, since I'm a cheap bastard, and I happen to agree with Apple on this one. Fuck floppies. They should have died a long time ago. I also refuse to run Windows XP - I bought and paid for Windows 2000, a long time ago in a galaxy far far away, and it's the last release of Windows that I really plan on ever using. Windows 2000, being rather old, has some deficiencies, however. Like not having SATA support in the installer (unless you load a driver from a floppy, which I don't have).</p><p>I think to myself, "Hey! VMware! Raw disk support! It used to work pretty well, why not try doing an installation from a virtual machine into a physical disk? You can use the VM to download drivers, then create a new hardware profile, reboot into it, and maybe that'll work."</p><p>HAHAHAHAA</p><p>Let's just say that this was probably the worst idea I've had all night, even worse than eating that third slice of pizza. My partition table on /dev/hda now looks like this, thanks to VMware:</p><p><pre>Disk /dev/hda: 41.1 GB, 41174138880 bytes<br />16 heads, 63 sectors/track, 79780 cylinders<br />Units = cylinders of 1008 * 512 = 516096 bytes</p><p>This doesn't look like a partition table<br />Probably you selected the wrong device.</p><p>   Device Boot      Start         End      Blocks   Id  System<br />/dev/hda1   ?      216399     1904881   850995205   72  Unknown<br />Partition 1 does not end on cylinder boundary.<br />/dev/hda2   ?      723265     1262922   271987362   74  Unknown<br />Partition 2 does not end on cylinder boundary.<br />/dev/hda3   ?      167316      167316           0   65  Novell Netware 386<br />Partition 3 does not end on cylinder boundary.<br />/dev/hda4         2671568     2671619       25817+   0  Empty<br />Partition 4 does not end on cylinder boundary.</p><p>Partition table entries are not in disk order<br /></pre></p><p>I'm not even sure what to say about that.</p><p>(For those of you wondering why I wanted to play with Windows in the first place - SATA DVD burner. I know that I can install Win2K drivers for the SATA chipset, and I know that the DVD burner will *probably* work there.)<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/May/07#unexpected_results" title="Date link">00:35</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/unexpected_results.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=unexpected results" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Thu, 05 May 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="joy"><span class="tbox"> .: joy! :: </span></a>
+		<div class="text">
+			<p>My new toys arrived today.</p><p>That's one <a href="http://c133.org/img/pc60.jpg">Lian-Li PC-60</a>, one Chaintech VNF4/Ultra motherboard, and one Athlon64 3000+ CPU.</p><p>This machine is officially fast enough to scare me. I can play Doom3 at my monitor's native resolution (1680x1050) and the frame rate doesn't drop below 60fps even with baddies on the screen.</p><p>The only other goodies I need to complete this box are a couple of 400G SATA drives. The Hitachi model is only $275 on NewEgg, which means that it's now possible to put over 1TB of storage into a box for under $1000.</p><p>Holy shit life is good.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/May/05#joy" title="Date link">01:23</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/joy.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=joy!" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Fri, 15 Apr 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="rant_part_deux"><span class="tbox"> .: rant part deux :: </span></a>
+		<div class="text">
+			<p>Several people were kind enough to point out that this code:<br /><pre><br />for i in xrange(foo):<br />    print i<br /></pre><br />actually wouldn't work. Thanks, I'm an idiot. I should have had:<br /><pre><br />for i in xrange(len(foo)):<br />    print i<br /></pre></p><p>Next, yet another method of reversing/iterating backwards over a list has been suggested in multiple places, one which I didn't know about.<br /><pre><br />foo = ['one', 'two', 'three']<br />bar = foo[::-1]<br /></pre></p><p>The only thing I can possibly say to that is... but the ternary operator is too obscure? C'mon, give me a break. This provides the ability to have tons of random line noise and make your code just as unreadable.</p><p>And, <a href="http://blog.sethdot.org/index.cgi/223">Seth</a>: Since I couldn't catch you on IRC earlier, I'll just reply here.</p><p>Multiple issues to respond to, so let me break it down.</p><p><ol> <li>You seem to be confused as to what I was complaining about with <code>list.reverse()</code>. It's not that I want a copy of the list, exactly, but I want the return value of <code>list.reverse()</code> to be sane, which in my exceedingly humble opinion, it is nowhere near.</li> <li>I'm not upset, mind you, just mildly annoyed, by the iteritems()/enumerate()/xrange() issue. And the reason that it's annoying to me is because it's inconsistent. Some of the iterator methods are global and some of them are not. Inconsistency is lame. End of topic.</li> <li>Ternary operators seem to be quite the polarizing issue so I'll just leave my stance exactly where it is. I think they're useful, and I'd like to have them, but obviously I can work around the language not having them...</li> <li>Especially since Python doesn't have sane scoping, either; the method-local and class-local scoping rules provide the opportunity for <b>way</b> too many obscure and annoying bugs. I note that you didn't respond to my issue with scoping at all.</li> </ol></p><p>Oh, also, a friend of mine has offered to send you a copy of the Smalltalk book, where he says that they solved the problem of doing lambdas and maps efficiently.</p><p>I'll kindly ignore your not-so-subtle digs at my programming ability (or perceived lack thereof) and refuse to insult you for liking Python. Mind you, I still think it's a useful language, but I'm just annoyed at the inconsistencies and some pet features (like ternary operators, or sane scoping) that I wish it had.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Apr/15#rant_part_deux" title="Date link">19:14</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/rant_part_deux.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=rant part deux" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="python_rant"><span class="tbox"> .: python rant :: </span></a>
+		<div class="text">
+			<p>(This is a pretty geeky entry, so if you're not a geek, consider yourself warned.)<br />I have a lot of little tiny annoyances with python, since I've been using it for a while now to hack on some stuff. Here's a collection of the ones that are floating on top of my brain.</p><p><h4>::sniff::</h4><br />I miss my ternary operator.</p><p>In C, and C++, and Perl, and Ruby, and PHP, and pretty much any language that I've ever written in (hell, I think even JavaScript supports this, though I could be wrong about that one since I haven't written any JavaScript code in years), you can use a very terse syntax for <code>if (foo) { return bar; } else { return baz; }</code> using what is referred to as the ternary operator.</p><p>The shortened syntax is more like:<br /><pre><br />(foo ? bar : baz)<br /></pre></p><p>Yeah, it's kinda weird. And yeah, if you don't understand it, it's not very intuitive. However, it makes for much shorter and clearer code (to those who grok ternary operators). Python doesn't support this. At all. There was a proposal to include it and it got smacked down, so that they could include such other genius ideas as <code>reversed()</code> instead. Speaking of which...</p><p><h4>backwards</h4><br />Reversing an array is done like:<br /><pre><br />foo = ['one', 'two', 'three']<br />foo.reverse()<br /></pre><br />This does not return a reversed copy of the array, but it does reverse the array in-place and return 'None' which is quite confusing. Especially if you're used to sensible languages which return a reversed copy. So this code doesn't work.<br /><pre><br />foo = ['one', 'two', 'three']<br />for i in foo.reverse(): <span color="#29416C"># bzzzt, reverse() returns 'None'</span><br />	print i<br /></pre><br />You <b>can</b> iterate through an array with the <code>reversed()</code> keyword, like:<br /><pre><br />for i in reversed(foo):<br />	print i<br /></pre><br /><b>However</b>, this is a python-2.4-specific feature, so it's useless if you care about older python releases. Also, it doesn't create a reversed array, just hands you a pointer to a reversed list iterator. So you can't do:</p><p><pre><br />foo = ['one', 'two', 'three']<br />bar = reversed(foo)<br />print bar[0] <span color="#29416C"># 'three'? how about a TypeError!</span><br /></pre></p><p>Because <code>bar</code> is actually not a list, or array, or what-have-you, but it's a listreverseiterator object. Whatever the hell that's supposed to mean. What it translates into is basically "Surprise! We hate you."</p><p>So, you have to do:<br /><pre><br />foo = ['one', 'two', 'three']<br />foo.reverse()<br />for i in foo:<br />	print i<br /></pre><br />Which, granted, ok, isn't the end of the world, but it's pretty ugly and it doesn't work at <b>all</b> the way I had expected it to, which to me is the sign of a language that sucks.</p><p>For reference, the following code in ruby does work exactly how I expected it to. And because ruby and python share a decent amount of syntactical sugar, I keep on getting annoyed when things that I expect to be working in python simply aren't.<br /><pre><br />foo = ['a', 'b', 'c']<br />p foo.reverse() <span color="#29416c"># prints out "['c', 'b', 'a']"</span><br />foo.reverse().each { |i|<br />	print i<br />}<br /></pre><br />Ruby's list iterators are weird, sure. But actually, that's a good way to bring up my next complaint.</p><p><h4>iterators in general</h4><br />Why the hell do you have multiple types of list iterator methods in python? I shouldn't have to remember a different type of iterator method for every different type of container, nor should I have to remember whether it's a global iterator method or a per-container one. That's just annoying, and pointless.</p><p>So, you have <code>foo = ['a', 'b', 'c']</code>, right.<br />Now, to recap, you can traverse the list backwards (in 2.4, anyway) with:<br /><pre><br />for i in reversed(foo):<br />	print i<br /></pre></p><p>You can get the indexes of the members of the list with:<br /><pre><br />for i in xrange(foo):<br />	print i <span color="#29416C"># Prints out the index of each member</span><br /></pre></p><p>You can also do:<br /><pre><br />for i, n in enumerate(foo):<br />	print i, n <span color="#29416C"># Prints the index and the member</span><br /></pre><br />Although I have no idea why you'd want to. (You can always just do xrange(foo) and then 'foo[i]' since they give you the same thing. But ternary operators would be too confusing.)</p><p>But, if you have a dict instead of a list, all of a sudden...<br /><pre><br />foo = { 'a':1, 'b':2, 'c':3 }<br />for i, n in foo.iteritems():<br />	print i, n<br /></pre></p><p>Using <code>enumerate()</code> gives you the index of the 'a', 'b', and 'c' keys. Also, note that <code>enumerate()</code> is a global, like <code>reversed()</code>, but <code>iteritems()</code> is a member of the dict class type. This is the kind of inconsistency in a language that kills me.</p><p><h4>white space</h4><br />Surprisingly, I don't mind the whitespace thing. It just doesn't bother me that much. (Ok, so that's not really a complaint. Still, enough other people complain that I figured it was worth noting that it just doesn't irk me.)</p><p><h4>scoping</h4><br />Scoping is <b>weird</b> in python. Let me explain.<br />In regular languages, a variable declared inside of a block of code only lives until the end of that block; this is the 'scope' of the variable. So if you have:<br /><pre><br />if (condition) {<br />	string foo = "hahahaha";<br />}<br />print (foo); <span color="#29416C">/* Error! 'foo' didn't make it past that last '}' */</span><br /></pre><br />(Yeah, that's not a real language, though I suppose it could be valid C or C++ or something. I don't care, it's just there to illustrate a point.)</p><p>But in python, guess what?</p><p><pre><br />if condition:<br />	foo = "hahahaha"</p><p>print foo <span color="#29416C"># This actually <b>*works*</b> - wtf?</span><br /></pre></p><p>There are other issues that annoy me, but these are just the ones on top of my head. I'll write another rant if this one pisses off enough python devs.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Apr/15#python_rant" title="Date link">04:25</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/python_rant.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=python rant" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="toys"><span class="tbox"> .: toys :: </span></a>
+		<div class="text">
+			<p>The other day, I was on Dell's website. They had the 2005FPW for 25% off, and I thought to myself, "Self, that's a damned good deal."</p><p>However, I didn't have $561.75 free on any of my accounts, and the deal expired in a few days. Then I saw the "Apply now" link. "Hmm, instant loan. Nah, you already have too much credit."</p><p>Wait, though. If you apply for credit and you get rejected, at least in the US, you're automatically entitled to a free credit report. What the hell, why not? I can always use a free copy of my credit report.</p><p>About three minutes later, the Dell website comes back with the result. "Congratulations! You qualify for a $1500 line of credit."</p><p>Shit.</p><p>Needless to say, now I have a sweet 20" widescreen LCD. It's gorgeous. I liked it so much that I bragged to pretty much everyone that would listen. And I even convinced ajax to buy one, but he went and bought three instead. Crazy bastard.</p><p>I'd post pics, but I don't have a digital camera. Mostly because when I buy one, I want it to kick ass, and the ones that I want are still over $1000.</p><p>Note: All amounts in USD.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Apr/15#toys" title="Date link">01:16</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/toys.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=toys" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Tue, 05 Apr 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="wtf_xda"><span class="tbox"> .: wtf xda :: </span></a>
+		<div class="text">
+			<p>[@ajax] so working on DRI for i128, i turned off XAA<br />[@ajax] in the spirit of experimentation, i ran xcompmgr -a<br />[@ajax] it feels _much_ faster now<br />[@ajax] like, firefox doesn't tear when scrolling<br />[@ajax] it's kinda weird<br />[@daniels] hmm<br />[@daniels] maybe we should rename it to XDA :P<br />[@ajax] totally unaccelerated, but just fast enough to feel useful<br />[@ajax] the only unpleasant part is switching desktops<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Apr/05#wtf_xda" title="Date link">22:59</a>] | [<a href="http://c133.org/blog/tech/fdo" title="Category">/fdo</a>] | <a href="http://c133.org/blog/tech/fdo/wtf_xda.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=wtf xda" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Thu, 24 Mar 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="congratulations_zack"><span class="tbox"> .: congratulations, zack :: </span></a>
+		<div class="text">
+			<p>Major kudos to Zack Rusin for getting hired at Trolltech.</p><p>(Not like it should be a surprise to anyone, since Zack kicks ass and Trolltech also kicks ass.)</p><p>This bodes extremely well for KDE4. World domination!<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Mar/24#congratulations_zack" title="Date link">17:07</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/congratulations_zack.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=congratulations, zack" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Mon, 21 Mar 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="spin_spin"><span class="tbox"> .: spin spin :: </span></a>
+		<div class="text">
+			<p><a href="http://www.livejournal.com/users/spyderous/13259.html">Donnie</a>: <a href="http://planetKDE.org/">Planet KDE</a>, and every ten minutes. I'm thinking about changing it to update every fifteen, though. We're getting enough feeds that we're spending more time updating than idling.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Mar/21#spin_spin" title="Date link">17:27</a>] | [<a href="http://c133.org/blog/tech/fdo" title="Category">/fdo</a>] | <a href="http://c133.org/blog/tech/fdo/spin_spin.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=spin spin" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sat, 19 Feb 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="subversion_migration"><span class="tbox"> .: subversion migration :: </span></a>
+		<div class="text">
+			<p>One of the things I keep thinking about with KDE's much-vaunted CVS->SVN migration is... why don't we just leave the CVS server up as it is, and screw the whole "import the entire history of our repository into SVN" idea?</p><p>Think about it.</p><p>The cvs2svn script is good. Don't get me wrong - it's pretty impressive. But we've done some evil to our CVS repository - manually moved files, etc, and cvs2svn is not perfect; why don't we just leave the CVS server up and running read-only and import a snapshot (say, 3.4) into SVN without trying to drag all of the history along?</p><p>People who want to pull absolutely 100% accurate checkouts of a given revision can do it with the old tools and we can evaluate subversion without having to deal with any possible issues brought up by weirdness caused by cvs2svn.</p><p>I personally think this may be the smartest way to move forward, but I'm sure that others have differing opinions. Care to <a href="mailto:clee@kde.org">share them with me</a>?<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Feb/19#subversion_migration" title="Date link">02:54</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/subversion_migration.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=subversion migration" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Thu, 17 Feb 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="lseek_0x5c"><span class="tbox"> .: lseek(fd, 0x5c, SEEK_SET) :: </span></a>
+		<div class="text">
+			<p>Our Intel rep managed to secure me an 802.11a/b/g mini-PCI card for my ThinkPad. Direct from Intel. Totally sweet.</p><p>Somehow managed to get the ThinkPad apart, and dropped in the new card, and connected the antennae, and turned it on, and was greeted rather rudely by two beeps and the infamous Error 1802.</p><p>I was prepared for this though. I expected to spend the rest of the day hacking around IBM's evil authorized-miniPCI-card whitelist and being otherwise 1337 just like mjg59. But instead, I found the source for a neat little hack that resets part of the nvram to a magic value and disables the whitelist check.</p><p>All this means for those of you who don't speak Geek is that I overrode some IBM stupidity and made my hardware work the way it should. Which should have been much easier, but hey, this is Linux, and we like things like lseek(fd, 0x5c, SEEK_SET) just fine.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Feb/17#lseek_0x5c" title="Date link">17:49</a>] | [<a href="http://c133.org/blog/tech/redhat" title="Category">/redhat</a>] | <a href="http://c133.org/blog/tech/redhat/lseek_0x5c.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=lseek(fd, 0x5c, SEEK_SET)" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="google_dinner_beta"><span class="tbox"> .: Google Dinner beta :: </span></a>
+		<div class="text">
+			<p>I spent most of this week at LinuxWorld in Boston (and the very beginning of the week at the XDevConf, which ajax took notes of) so my legs are killing me. But last night, Google sponsored this amazingly kick-ass dinner for a few dozen of us free software hacker types, and it was completely badass.</p><p>They had some issues with their food distribution algorithms though. Hopefully next year, if they roll out Google Dinner 2.0, they'll have that algorithm sorted out. (It took an inordinate amount of time to get our food since everyone had to wait in a huge line to get served - there's definitely room for optimization there, I think.)</p><p>I talked Dave Jones into coming along and we had an awesome time. As soon as we walked in, we were accosted by Google folks who made us fill out some registration cards. One of the fields on the card said "Desired position" so I asked the woman (who had an amazingly kick-ass Google shirt, one with a female symbol on one of the 'o's in Google, but I digress) "What does this 'desired position' field mean?"</p><p>"We want to know, if you were to work for us, what position would you want to have?"</p><p>This stunned me. What an amazingly smart way of getting people interested. So davej and I filled in "spaceman" and "Batman" respectively. I mean, if Google is going to be hiring someone to be Batman, I certainly hope that they'd consider me for the position, because I think I could do really well in that role.</p><p>Got to meet some cool people there, including <a href="http://mako.yukidoke.org/copyrighteous/">Mako</a> who apparently wanted to meet me because he knew who I was. Finding out that other people <i>know who I am</i> and want to meet me.... that's kinda freaky. I mean, granted, we're not talking about Havoc Pennington-style rockstar status.</p><p>Yet.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Feb/17#google_dinner_beta" title="Date link">09:32</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/google_dinner_beta.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=Google Dinner beta" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sat, 12 Feb 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="xdevconf_2"><span class="tbox"> .: xdevconf version 2.0 :: </span></a>
+		<div class="text">
+			<p>Zack Rusin flew in and Adam Jackson drove up last night and both are crashing at my place.</p><p>We're at the X Developers' Conference in Cambridge. ajax is taking notes, so I'll link to them once he uploads them.</p><p>Anyway. Back to the discussion about freedesktop and current level of desuckification.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Feb/12#xdevconf_2" title="Date link">10:41</a>] | [<a href="http://c133.org/blog/tech/fdo" title="Category">/fdo</a>] | <a href="http://c133.org/blog/tech/fdo/xdevconf_2.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=xdevconf version 2.0" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Mon, 31 Jan 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="world_of_warcrack"><span class="tbox"> .: world of warcrack :: </span></a>
+		<div class="text">
+			<p>I attempted to hunt down a copy of World of Warcraft a few weeks ago, in vain.</p><p>My searches were fruitless. I went to several Wal-Marts, Targets, and Gamestops. All were completely devoid of World of Warcraft loving. This made me sad.</p><p>I ended up going to go visit Tony (who I'll be dropping by to see again on the sixth for the Chinese New Year) and I crashed at his place after he, Rob, and I stayed up until way too late watching Battlestar Galactica at Rob's place. The following morning, we got up and I talked Tony into going to the Apple store. It wasn't that hard to convince him, actually. I just said "We're going to the Apple Store," and he complied. Once there, I had the instant flash of realization that the wonderful bastards at Blizzard put the Mac and PC versions of their games on the same CDs. Those crazy fools. I searched for the gem and - lo and behold - there were FIVE copies of WoW. I picked mine up, made sure it wasn't some book or gift card (like Target had. For shame, Target! For shame.) and I carried it to the line at the register and bought it.</p><p>The game is incredible. It's seriously just amazing. If only I had a decent video card, one that didn't overheat when I played it... And dealing with Windows is shitty.</p><p>Which is why I've bought a <a href="http://www.apple.com/macmini/">dedicated World of Warcraft box</a>. It hasn't arrived yet, which irks me. But it should be here "on or before" the seventeenth of February, according to Apple. Huzzah for that.</p><p>That's about all that's new in the past few weeks. I'll attempt to blog more frequently - hey, I should dump my .plan on here sometime and see what people think - but it'd probably be easier if I had my blogging app working again. Sounds like a fun project for tonight!<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Jan/31#world_of_warcrack" title="Date link">20:59</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/world_of_warcrack.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=world of warcrack" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sat, 11 Dec 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="gonna_show_quinn"><span class="tbox"> .: Gonna show Quinn this thing that I got... :: </span></a>
+		<div class="text">
+			<p>So I've got a new revision of the Super Nintendo sound chip emulation code from antires, and after modifying a few parts of my own code the GStreamer plugin is now working.</p><p>Reliably. No more magic, no more crazy kludges. Feels good.</p><p>I think that the filter development branch is ready to be merged into the mainline, which means that the typefind code is next to be written. Being in deep hack mode is damned refreshing.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Dec/11#gonna_show_quinn" title="Date link">19:00</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/gonna_show_quinn.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=Gonna show Quinn this thing that I got..." class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Tue, 07 Dec 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="youve_laid_your_brood_of_eggs_in_my_navel"><span class="tbox"> .: you've laid your brood of eggs in my navel! :: </span></a>
+		<div class="text">
+			<p>Found out something mildly amusing today.</p><p>Apparently nobody has bothered building anything from the xlibs or xserver trees on an AMD64 system yet.</p><p>These modules contain such gems as:<br /># if defined(__AMD64__) || defined(AMD64)</p><p>Which doesn't actually *work* on these machines, as gcc defines __amd64__ and not AMD64. (Yeah, kids, case matters.)</p><p>Daniel added me back to the xlibs and xserver groups, so I should be able to commit some fixes for this stuff; however, there are still a lot of other issues on AMD64 that haven't been fixed yet. ::sigh::<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Dec/07#youve_laid_your_brood_of_eggs_in_my_navel" title="Date link">14:18</a>] | [<a href="http://c133.org/blog/tech/fdo" title="Category">/fdo</a>] | <a href="http://c133.org/blog/tech/fdo/youve_laid_your_brood_of_eggs_in_my_navel.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=you've laid your brood of eggs in my navel!" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Mon, 06 Dec 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="gstreamer_hacking"><span class="tbox"> .: gstreamer hacking :: </span></a>
+		<div class="text">
+			<p>So mpyne had implemented a somewhat working SPC plugin for GStreamer which was pretty limited and somewhat useless. (As he admitted :)</p><p>His version had a hardcoded path to the SPC file, didn't work as a filter - just as a src - and was performing quite strangely on his system for some reason. I've since rewritten it (from scratch) as a filter and not a src. It works on my system, kind of. I haven't gotten the typefind implementation done yet, and it's pretty fragile at the moment - I haven't figured out exactly why, but somehow removing a printf from the spc_setup function causes the plugin to segfault (I think LoadSPCFile may be doing something strange, but I'm not sure...)</p><p>If you have tla installed, you can do:<br /><pre>tla register-archive http://c133.org/arch/<br />tla get clee@kde.org--2004/gst-spc--filter--0 gst-spc</pre></p><p>If you don't have tla, you can try poking around on the site but seeing as how things aren't quite ready for mass consumption, I'm not making any releases just yet.</p><p>Now, to go take a shower. All of those 'g's and '_'s make me feel so dirty.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Dec/06#gstreamer_hacking" title="Date link">06:27</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/gstreamer_hacking.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=gstreamer hacking" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sat, 04 Dec 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="its_a_good_thing_i_exist"><span class="tbox"> .: It's a good thing I exist! :: </span></a>
+		<div class="text">
+			<p>(Mixing some Zim quotes in now...)</p><p>Michael Pyne, brilliant guy that he is, was trying really hard to get this SNESAPU code working on his system. I couldn't even get the crap to compile, let alone to run and dump a bunch of zeroes like he was getting.</p><p>I had mpyne tar up his work and send it my way to see if I could find anything new. About forty-five minutes later, after we'd both looked in a lot of unrelated areas, I found the missing link: A call to ResetAPU. Added that in, and all of a sudden, it works!</p><p>Now, that wasn't enough. Since I finally have this library compiling, and running, I don't want to simply dump the first five seconds of every SPC to a wave file named output.wav. I want to play them to my speakers!</p><p>Having no prior experience with libao, but remembering somewhat vaguely that the API didn't look too disgusting, I decided to try to get SPC->libao output working. And now, just under an hour later, <a href="http://c133.org/tmp/spcplay.cpp">I have it working</a>. And I even cleaned up the code a little bit so it's not quite as embarrassing.</p><p>This code probably won't do most of you any good, but this is mostly for mpyne's benefit as I'm not convinced I'll still be conscious when he gets back. However, if you are interested in playing with it, you can <a href="http://c133.org/files/snesapu-linux.tar.bz2">grab the tarball</a> from my site. You'll need g++ and nasm to build the stuff, and since most of it's in assembly, you'll need to be on x86.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Dec/04#its_a_good_thing_i_exist" title="Date link">05:44</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/its_a_good_thing_i_exist.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=It's a good thing I exist!" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Fri, 03 Dec 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="short_post"><span class="tbox"> .: Short post :: </span></a>
+		<div class="text">
+			<p>The only point of this post is to point out to everyone that <a href="http://aseigo.blogspot.com/2004/12/3rd-oldest-kicker-bug-closed.html">aseigo fucking rules</a>.</p><p>That is all.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Dec/03#short_post" title="Date link">23:44</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/short_post.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=Short post" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="i_even_have_a_secret_mountain_stronghold"><span class="tbox"> .: I even have a secret mountain stronghold :: </span></a>
+		<div class="text">
+			<p>I guess somehow I've been talked into being a packager for Fedora.</p><p>Man, life is weird sometimes.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Dec/03#i_even_have_a_secret_mountain_stronghold" title="Date link">02:27</a>] | [<a href="http://c133.org/blog/tech/fedora" title="Category">/fedora</a>] | <a href="http://c133.org/blog/tech/fedora/i_even_have_a_secret_mountain_stronghold.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=I even have a secret mountain stronghold" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Tue, 30 Nov 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="oh_and_chainsaw_hands"><span class="tbox"> .: oh! and chainsaw hands! :: </span></a>
+		<div class="text">
+			<p>Well, ok, no chainsaw hands, but I got my replacement laptop from work today. It's an X31 - smaller and sexier than my old T41, which was stolen from my car while I slept.</p><p>Don't think I'll be leaving this one in the car. Ever.</p><p>But yeah, I'm excited. FC3 actually isn't as bad as previous releases, so I'm keeping it on there... I'm probably going to see about taking over those KDE specfiles so I can have less-shitty KDE packages on Fedora, but we'll see. Don't want to go around making promises and disappointing people.</p><p>I should really do a TODO one of these days and list out the stuff I need to take care of. Like that pyblosxom plugin. Damn.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Nov/30#oh_and_chainsaw_hands" title="Date link">03:36</a>] | [<a href="http://c133.org/blog/tech/redhat" title="Category">/redhat</a>] | <a href="http://c133.org/blog/tech/redhat/oh_and_chainsaw_hands.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=oh! and chainsaw hands!" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sat, 27 Nov 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="youre_not_gonna_do_it_are_you"><span class="tbox"> .: you're not gonna do it, are you? :: </span></a>
+		<div class="text">
+			<p>I finally relented. People have been asking me for weeks to add/change the current class name for images which will show up in blog entries on Planet KDE, and I've finally made it possible for those of you who do want to have images show here without using the word "rape" in your image classes.</p><p>(Man, people get upset over the strangest things.)</p><p>So, if you want to embed an image and have it also show on the Planet you can still add 'class="rapemewithachainsawthanks"' but you can also add the less-risque and more boring 'class="showonplanet"' tag as well. Your choice.</p><p>For the general readership out there, this makes absolutely no difference whatsoever, incidentally. Images will continue to show or not show depending on whether or not the blog authors decide to put the images here.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Nov/27#youre_not_gonna_do_it_are_you" title="Date link">03:35</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/youre_not_gonna_do_it_are_you.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=you're not gonna do it, are you?" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sun, 21 Nov 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="another_day_another_server"><span class="tbox"> .: another day, another server :: </span></a>
+		<div class="text">
+			<p>The machine which was previously hosting c133.org (my domain) was compromised recently. So I set about finding new hosting, and I did thanks to Warren Togami (a coworker of mine at Red Hat) so you are now seeing c133.org on a brand-new box.</p><p>One interesting side effect of this is that my weblog is now statically generated instead of dynamically so. I haven't really changed the layout or anything, or even the design, but the filesystem paths have been played with a bit and the configuration has been gently tweaked. So now my blog should be even faster.</p><p>Oh, and <a href="http://planetKDE.org/">planet KDE</a> has a new home as well. Thanks to Stephen Depooter, it's now on a separate machine from c133.org and very unscientific cursory testing shows to me that it's even more well-connected than it was before. So, despite the fact that the breakin shut down the sites, I think that they're both better off now. And my mail seems to have mostly caught up with itself. Which is good.</p><p>now that I've been forced to get off my ass and actually look over the files on the site, I've done a little tiny bit of maintenance and cleaned up a few things that were previously still around. I may even get around to doing the aforementioned redesign at some point! But I don't want to make any promises, so I won't.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Nov/21#another_day_another_server" title="Date link">05:56</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/another_day_another_server.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=another day, another server" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sun, 14 Nov 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="4am_once_again"><span class="tbox"> .: 4AM once again :: </span></a>
+		<div class="text">
+			<p>So, I have a confession to make.</p><p>I've been using <a href="http://www.imendio.com/projects/gossip/">Gossip</a> as my Jabber client for a while. Which has been working out fairly well, since the UI is nice and clean. But there's been this slight annoyance with it - every time that I close a chatwindow in Gossip, it forgets how big the window was. Just completely forgets it.</p><p>This behavior finally got annoying enough that I put some gloves on, dug down deep, closed my eyes, and <a href="http://c133.org/tmp/gossip-chat-window-save-size.diff">massaged some GNOME code</a>.</p><p>The good news is, I lived. I have survived to tell the tale.</p><p>The bad news is, it was scary. And I feel sort of dirty.</p><p>It took a few hours to work out exactly what needed to go where, but overall it wasn't quite as terrifying as I had thought it would be. My underscore key did get quite a workout though. And I got to determine a few more reasons why I'm definitely glad to be a KDE developer. (Namespaces. Classes. God, I never thought I'd be so happy to look at classes again.)<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Nov/14#4am_once_again" title="Date link">04:12</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/4am_once_again.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=4AM once again" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Thu, 04 Nov 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="hackfest"><span class="tbox"> .: hackfest :: </span></a>
+		<div class="text">
+			<p>So geiseri hosted a hackfest at his place in PA last weekend. I showed up and brought manyoso with me; Nadeem Hasan came down, as did Mirko Boehm. Zack Rusin was already there, and it was fairly awesome. My only regret is that, despite the awesome time I had, I didn't get any hacking done since I don't have a laptop anymore.</p><p>Oh, yeah.</p><p>Somebody broke into my car a couple of weeks ago. Shattered the quarter glass behind the passenger window, and stole my IBM Thinkpad T41 out of the back seat. (Well, the footspace behind the passenger seat. Close enough.) I have no idea where the laptop is, and, while the police have been informed, they haven't really proven to be that useful.</p><p>End result: I have no laptop. So I was fairly useless at the hackfest as far as actual hacking goes. And my workstation at home is set up in a rather decidedly non-ergonomic fashion, which means that I can't really use the computer for extended periods of time without standing up and stretching out my knees.</p><p>I do have plans for stuff to hack on and plenty of things to keep me busy though. So don't worry about that, guys. Just need my replacement laptop to come in from work, and maybe I can pick up a computer desk with my next paycheck somehow.</p><p>Realized that I haven't blogged in a while, so these entries are a bit longer than the usual length. I doubt anybody will really care that much, but yeah. Maybe I can kick myself into blogging more frequently once I get some Tack hacking done again.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Nov/04#hackfest" title="Date link">23:49</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/hackfest.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=hackfest" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Fri, 15 Oct 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="it_s_4am"><span class="tbox"> .: it's 4am :: </span></a>
+		<div class="text">
+			<p>mpyne has called me out and made it public that I have Grand Plans for a pyblosxom plugin which will read (via XML-RPC) a chunk of text and then throw it on the blog if it likes it.</p><p>The trick is getting the plugin to like it.</p><p>My idea currently is to make the chunk of text a valid GPG-signed message. Have the server plugin read it in, decode it, check the signature against the configured key ID from the pyblosxom config file, and then if all of the criteria match, post it on the blog.</p><p>Have a few small issues to work out, but it looks like a lot of the hard work has been done for me. daniels wrote a Perl script that sort of does this if you filter email into it, but I hate Perl and the setup for that is annoying. Editing pyblosxom's config files is easy; I doubt that I'm going to end up losing data that way. If I somehow misconfigure a mail server, such that everything for my email ends up at blog@c133.org or something, I'll be fucked.</p><p>And I don't like that. So, I guess this is the part where I formally announce that I have intentions to actually finish this module (since I have a half-aborted attempt at it from a while back), clean up the code so that my key ID and stuff are no longer hardcoded into it, and then there might actually be a public release.</p><p>(Of course, once it's out, a KDE app which will be able to post to it, probably by using DCOP to communicate with KGPG, will be forthcoming.)<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Oct/15#it_s_4am" title="Date link">04:14</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/it_s_4am.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=it's 4am" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Wed, 13 Oct 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="showdown"><span class="tbox"> .: showdown :: </span></a>
+		<div class="text">
+			<p>I blogged earlier about KDE potentially moving our repositories from the ancient and archaic CVS system to the new hotness known as <a href="http://subversion.tigris.org/">Subversion</a>.</p><p>This time around, I've got more ammunition for discussion and a lot of thoughts about the relative strengths and weaknesses of each system as they apply to KDE. Hopefully other KDE developers will read these notes and at least take them into consideration when discussing our eventual move away from CVS.</p><p>So - first off, a few words about CVS. CVS has served KDE faithfully for years, and has been (for us) fairly stable and reliable. It doesn't change much. And, believe it or not, CVS does have some strengths. <br /><table border="0" cellspacing="1" cellpadding="3"><tr><th colspan="2">CVS</th></tr><tr><th>Strengths</th><th>Weaknesses</th></tr><tr><td><ul><li>Ubiquitous (practically every operating system on every platform can run CVS)</li><li>Relatively light on resource usage</li><li>Comparitively light on disk usage</li><li>It actually <b>works</b></li></ul></td><td><ul><li>Branching is painful</li><li>Lacking in certain very basic features</li><li>Lack of atomicity with commits; no transactions</li><li>Not very well-optimized for low-bandwidth</li><li>Difficulty handling binary files properly</li></ul></td></tr></table></p><p>Now, Subversion fixes a few of these issues, but at the core Subversion's goal is to be a better CVS than CVS. It doesn't implement wire compatibility, nor can it natively use the old CVS repository format; instead, it maintains the same ideas as CVS (namely the same centralized development model), as well as a compatible command-set except for areas where changes are needed to deal with Subversion having features that CVS doesn't.<br /><table cellspacing="1" cellpadding="3"><tr><th colspan="2">Subversion</th></tr><tr><th>Strengths</th><th>Weaknesses</th></tr><tr><td><ul><li>Little to no learning curve if you already know CVS</li><li>Atomic commits, with <a title="If the commit fails - client kills it, connection dies, etc - it doesn't end up halfway in the repository. Instead, it fails completely.">transactions</a></li><li>File renames</li><li>More efficient wire protocol for <a title="Transmits diffs instead of full files whenever possible, both server-to-client and client-to-server">low-bandwidth</a></li></ul></td><td><ul><li>Disk usage is significantly higher than CVS for a converted repository</li><li>Subversion seems slower than CVS, quite a bit so in some cases</li><li>Not nearly as ubiquitous as CVS (yet)</li><li>Resource usage is relatively higher than CVS</li></ul></td></tr></table></p><p>And, just for good measure (basically, because I like it) I'll throw in a little bit about Arch, also known as 'tla'.<br /><table border="0" cellspacing="1" cellpadding="3"><tr><th colspan="2">Arch</th></tr><tr><th>Strengths</th><th>Weaknesses</th></tr><tr><td><ul><li>Super intelligent merging support</li><li>GPG signing support</li><li>Seamless inter-archive branching support</li><li>Very easy on server-side resources</li><li>Offline commits</li></ul></td><td><ul><li>Relatively high learning curve</li><li>Nowhere near as ubiquitous as even Subversion</li><li>Rather difficult and verbose user-interface</li><li>Disk usage is also higher than CVS</li><li>Speed is not very impressive</li></ul></td></tr></table></p><p>What does this mean for KDE?</p><p>I think that Subversion is a much more natural fit for KDE than Arch. We have a very centralized development model; however, the disk usage issue is depressing to think about. I ran a test conversion of our kdelibs repository from CVS to Subversion, once using the Berkeley database backend and once using the new fsfs backend; the bdb backend takes up 1194M of space, and the fsfs backend takes 1130M of space on my system. In comparison, the CVS repository takes up 281M of space for the same revisions. Some of the Subversion developers have offered me a few hints, but I cringe to think about how difficult the migration will be for a <b>large</b> module such as kde-i18n.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Oct/13#showdown" title="Date link">00:59</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/showdown.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=showdown" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sun, 10 Oct 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="hooray_for_migration"><span class="tbox"> .: hooray for migration! :: </span></a>
+		<div class="text">
+			<p>So there's some pretty <a href="http://lists.kde.org/?t=109726039700003&r=1&w=2">heavy discussion</a> on the kde-core-devel list about migrating from CVS to Subversion for the entire KDE project.</p><p>All I can say is, the sooner, the better.</p><p>Of course, I'm very much of the mind that tla &gt; svn &gt; cvs, but as long as we're moving up the stack, even if marginally, it's still progress. Plus, svn has the feature that it is much more like tla than CVS is, and the cvs2svn guys have already written an impressive script to convert the ancient RCS files into changesets. And since both Subversion and Arch are changeset-oriented... I'm very excited. In my mind at least, it shouldn't be too insanely difficult to migrate from svn to tla in the future...<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Oct/10#hooray_for_migration" title="Date link">23:43</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/hooray_for_migration.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=hooray for migration!" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Thu, 07 Oct 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="status_2004_10_07"><span class="tbox"> .: status 2004/10/07 :: </span></a>
+		<div class="text">
+			<p>Damn. The past week has been awesome.<br /><ul><li>Did the functional testing and RHNQA on a KDE errata here.</li><li>Filed bugs against gnome-panel, evolution-data-server, bonobo-activation-server, and ran into a terribly amusing metacity crasher.</li><li>Did the functional testing on an ugly cyrus-sasl vulnerability.</li><li>Did a *new* round of functional testing on a bug caused by the fix to the ugly cyrus-sasl vulnerability.</li><li>Pushed a release of redhat-artwork sometime last week anyway.</li><li>Continued hacking on the Qt port of BlueCurve.</li></ul></p><p>All in all, dangerously productive. Not to mention keeping track of email and IRC.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Oct/07#status_2004_10_07" title="Date link">17:59</a>] | [<a href="http://c133.org/blog/tech/redhat" title="Category">/redhat</a>] | <a href="http://c133.org/blog/tech/redhat/status_2004_10_07.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=status 2004/10/07" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sat, 25 Sep 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="whoops"><span class="tbox"> .: whoops :: </span></a>
+		<div class="text">
+			<p>Ran out of disk space on tycho for a minute there.</p><p>For those of you who don't know, tycho is the machine which hosts not only c133.org (and this my web site and email) but also planetKDE.org and Daniel Stone's fooishbar.org.</p><p>So when it runs out of disk space, planet KDE goes down and my email stops arriving which makes me sad.</p><p>It was getting to be about time to archive the email off again anyway. I'm up to 100M again in my Maildirs. Ugh.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Sep/25#whoops" title="Date link">21:52</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/whoops.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=whoops" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Thu, 23 Sep 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="bitchin_home_made_tesla_coil"><span class="tbox"> .: bitchin' home-made tesla coil :: </span></a>
+		<div class="text">
+			<p>HDTV service was installed and turned on yesterday. Still feeling a little sick and not so hot, but I'm going in to work today.</p><p>The new Smallville season looks <b>good</b> so far. I love that show. I have to admit, I didn't really like Lois at first but her personality has already started growing on me. I just wish that Comcast offered the WB in HD up here.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Sep/23#bitchin_home_made_tesla_coil" title="Date link">09:18</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/bitchin_home_made_tesla_coil.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=bitchin' home-made tesla coil" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Fri, 17 Sep 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="what_kind_of_madman_are_you"><span class="tbox"> .: what kind of madman are you?!?! :: </span></a>
+		<div class="text">
+			<p>mattr just asked me on IRC why exactly it is that I want to write YAIMC (Yet Another Instant Messenger Client) and this is my response, for those of you who aren't really paying attention.</p><p>09:55 [mattr] clee: then why don't you spend time to either suggest improvements or improve the other existing ones?<br />09:55 [clee] mattr: Because the kinds of "improvements" that I'm going to suggest for kopete and for gaim and for every other client out there will get A) Laughed at or B) Ignored<br />09:55 [mattr] clee: and you know this how?<br />09:55 [clee] mattr: Ok, let's see your reaction to these suggestions.<br />09:56 [clee] 1) Drop every protocol except OSCAR.<br />09:56 [clee] 2) Strip out most of the 'plugin-based' API for everything.<br />09:56 [clee] 3) Redesign the UI to not suck.<br />09:56 [ShawnLaptop] clee: what kind of IM protocols will it support than?<br />09:56 [clee] ShawnLaptop: ICQ and AIM.<br />09:56 [clee] Which are the only ones that I give a flying fuck about.<br />09:56 [ShawnLaptop] MSN, Jabber, Yahoo?<br />09:56 [clee] Fucke'm.<br />09:57 [clee] er, Fuck'em.</p><p>There was a lull while mattr went to go get lunch, and then the discussion started back up again.</p><p>10:36 [mattr] clee: you better hope your IM client isn't any good, because then people will want you to have plugins, and support other protocols. :P<br />10:36 [clee] mattr: Oh, it won't be.<br />10:36 [clee] mattr: As a matter of fact, I'm going to hardcode my username and password into it.<br />10:37 [clee] mattr: There will be zero preferences, because all behavior will be hardcoded to exactly the way that *I* like it<br />10:37 [clee] mattr: And if anybody doesn't like it, they can go fuck themselves and/or fork it themselves<br />10:37 [mattr] heh<br />10:38  * mattr notes that he neither laughed nor ignored clee's suggestions. :P<br />10:38 [clee] mattr: But you won't implement them.<br />10:38 [clee] mattr: And if you did, you'd ruin Kopete.<br />10:38 [clee] so it's ok.</p><p>To be honest, I may not even release the code to the rest of the world. What with my username and password being hardcoded into it. But we'll see.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Sep/17#what_kind_of_madman_are_you" title="Date link">14:09</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/what_kind_of_madman_are_you.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=what kind of madman are you?!?!" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="whoops_dart_in_your_neck"><span class="tbox"> .: whoops! dart in your neck :: </span></a>
+		<div class="text">
+			<p>My evil plot to subvert GNOME is slowly taking shape. Todd Berman is talking about having me help him with some C# bindings for libgaim. Not only will this rock because I may have a decent API to model my own IM client's after once the C# bindings are working, but it has the benefit of letting me learn a lot more about C# and Mono.</p><p>So many things I need to take care of tech-wise... still have to actually run a power cord to the quad PPro in the closet, have to set up LDAP accounts on it and Kerberos with some sort of filesharing for the home directories and then get the client computers here to work properly with that. Want to set up Ubuntu on one of my machines here since it seems to be pretty cool and I'm all about Debian without the brain damage. Need to figure out whether or not to leave the Radeon 9600 in my desktop or put back in the Radeon 8500 (or the GeForce4MX since the nvidia driver is the only one that actually gives reasonable performance with Composite right now...)</p><p>Not to mention work stuff. Oy. Not enough hours in the day. And where the hell are my clones, dammit? I'm kinda under-staffed here.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Sep/17#whoops_dart_in_your_neck" title="Date link">02:32</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/whoops_dart_in_your_neck.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=whoops! dart in your neck" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Fri, 10 Sep 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="and_ive_heard_great_things_kevin"><span class="tbox"> .: and I've heard great things, Kevin :: </span></a>
+		<div class="text">
+			<p>Got another new keyboard. The Logitech one that I was happy with before ended up not being nearly as rockalicious as I had initially thought. Programmable keys, yada yada, USB blah blah, shitty. No, <a href="http://christopher.aillon.org/">caillon</a> was cool enough to buy me a <a href="http://modelm.org/">Model M keyboard</a>. CLICKETY FOR LIFE!</p><p>And since I have had this one in my hands, I have realized just how much faster and more accurately I type on these keyboards. I missed that feeling. If only someone would make a USB-native Model M... (Oh, and I ordered another one from eBay which was apparently delivered to my apartment's office building this morning but I wasn't here.)</p><p>Seriously. These keyboards totally rule.</p><p>Incidentally, the one that caillon purchased was in fact not an original Model M but remade by the Keepers of the One True Keyboard, those saints at <a href="http://www.pckeyboard.com/">PC Keyboard</a>. These guys rule. I have no relation to them save that of the delighted recipient of one of their fine products.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Sep/10#and_ive_heard_great_things_kevin" title="Date link">01:22</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/and_ive_heard_great_things_kevin.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=and I've heard great things, Kevin" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sat, 04 Sep 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="disabled_account"><span class="tbox"> .: disabled account :: </span></a>
+		<div class="text">
+			<p>Sashmit, your site appears to have moved to a new host, and cron has sent me a few dozen emails about a 404 on your blog. Drop me an email when it's back up so I can uncomment your feed again :)<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Sep/04#disabled_account" title="Date link">15:25</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/disabled_account.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=disabled account" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Wed, 18 Aug 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="hardware_for_doom3"><span class="tbox"> .: hardware for doom3 :: </span></a>
+		<div class="text">
+			<p>new CPU and 1.5GB of RAM arrived yesterday to bolster my hardware so that I can actually play Doom 3.</p><p>That game is the first game since Silent Hill to make me actually afraid to go around the next corner.</p><p>It's awesome.</p><p>Playing it in the dark, on my TV, with the sound turned waaaay up, is absolutely terrifying, and by far one of the best gaming experiences I've ever had.</p><p>If only they'd release Linux binaries. Carmack, are you listening? I hate Windows and I'm sick of putting up with weird random shit just so I can play your masterpiece of a game.</p><p>::sigh::<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Aug/18#hardware_for_doom3" title="Date link">17:02</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/hardware_for_doom3.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=hardware for doom3" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="hooray_errata"><span class="tbox"> .: hooray errata :: </span></a>
+		<div class="text">
+			<p>ugh. Errata suck.</p><p>that is all.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Aug/18#hooray_errata" title="Date link">17:00</a>] | [<a href="http://c133.org/blog/tech/redhat" title="Category">/redhat</a>] | <a href="http://c133.org/blog/tech/redhat/hooray_errata.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=hooray errata" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Thu, 05 Aug 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="good_discussion"><span class="tbox"> .: good discussion :: </span></a>
+		<div class="text">
+			<p>Sat down with Ed and Zack yesterday and basically did a mind-meld; we had an hour-plus-long braindump session where I let loose all of the ideas, concerns, and issues that I've been thinking about as far as desktop QA goes here at Red Hat.</p><p>John Flanagan dropped in towards the end of it, and he seems to be quite open to a lot of our ideas, which is awesome. Hopefully we can get the budget/machines allocated to implement the desktop testing lab that we want to set up; that would be perfect.</p><p>Number of times I've forgotten my cardkey at the new office: Two</p><p>Number of days since someone has passed out in the bathroom: Nine<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Aug/05#good_discussion" title="Date link">14:02</a>] | [<a href="http://c133.org/blog/tech/redhat" title="Category">/redhat</a>] | <a href="http://c133.org/blog/tech/redhat/good_discussion.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=good discussion" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="planet_upgrade"><span class="tbox"> .: planet upgrade :: </span></a>
+		<div class="text">
+			<p>Talked to Scott James Remnant today, and asked him about the bug with atom.xml parsing and &lt;br/&gt; elements; he pointed me at his arch tree and told me to update from there, which I've done.</p><p>Net effect, a tiny bump and all of a sudden atom.xml feeds are looking dead sexy. Anybody who's currently blogging on blogspot - your feeds should no longer look like crap! There was a small bug for a minute with the old template, where the (feed) links in the sidebar on the right were all pointing back to planetKDE.org instead of pointing to the actual RSS feed from the developer. That's been fixed.</p><p>If you notice any other issues, please <a href="mailto:clee@kde.org">let me know</a>!<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Aug/05#planet_upgrade" title="Date link">13:56</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/planet_upgrade.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=planet upgrade" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sun, 01 Aug 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="new_hotness"><span class="tbox"> .: new hotness :: </span></a>
+		<div class="text">
+			<p>So Maksim (aka SadEagle) did some awesome hacking on my crazy widget style and fixed a few of the bugs that I've been too lazy (or too stupid) to fix myself lately. This has kickstarted me into looking at some more of my code, and I've actually been hacking on things lately.</p><p>I also have an evil plan regarding kdelibs... How much would everyone hate me if I split out the sub-libraries within the kdelibs package into smaller individual packages and ported them to use pkg-config instead of the voodoo that is our admin/ build system?</p><p><a href="mailto:clee@kde.org">Comments, replies, sexual favors</a>?<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Aug/01#new_hotness" title="Date link">12:49</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/new_hotness.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=new hotness" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Thu, 22 Jul 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="ols_rocks"><span class="tbox"> .: ols rocks :: </span></a>
+		<div class="text">
+			<p>Daniel and I drove up with Chris Blizzard for OLS, and we've been here since Sunday. The conference is kicking *major* ass, and I've gotten to meet tons of awesome people.</p><p>The bourbon that Bdale and Keith picked up completely knocked me on my ass though. I was completely out of commission on Tuesday, and barely managed to recover for Wednesday's activities.</p><p>Canada. What more can I really say? Like home, but just different enough to fuck with me. It's cool here, though; the wifi from the balcony is sort of spotty, but otherwise the room is awesome. More alcohol than I thought could be consumed has been.</p><p>Trying to convince Steph to start blogging. No luck as of yet.</p><p>Daniel is cramming hard for some deadlines. Which sucks for him. I feel kind of weird, being alone out here on the balcony, knowing that everyone else is asleep already. Good time to blog, though.</p><p>Kind of missing home, oddly enough. Never been homesick like this, not since the parents moved me to Arizona. Also, my mind keeps wandering back to Libby.</p><p>::sigh::</p><p>Overall, though - surprising quantities of ass-kickery have shown up in my life lately, and I'm still frankly quite shocked at it. If only life could be this badass all the time.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Jul/22#ols_rocks" title="Date link">02:51</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/ols_rocks.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=ols rocks" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Fri, 09 Jul 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="hackergotchi_head"><span class="tbox"> .: hackergotchi head :: </span></a>
+		<div class="text">
+			<p>So I've taken the time out of my day to gimp up a <a href="http://c133.org/img/me-sexy.jpg" title="Me, about as sexy as I get.">picture</a> of myself to use as a hackergotchi head. It's not a particularly great pic, but I figured it had the most potential for hackergotchi status.</p><p>I like the way it turned out. Any other guys here on Planet KDE, if you take the time out to do this, <a href="mailto:clee@kde.org">send me the PNG file</a> and I'll upload it and get it set for you so that you too can have a floating disembodied head.</p><p>If you do decide to gimp yourself up then please note that the image should be about 64 pixels wide to fit properly. Anything from 60 to 80 pixels tall will work for the height, but let's try not to make the images _too_ large.</p><p>(And yes, I'll host the images here so that your web server won't melt.)<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Jul/09#hackergotchi_head" title="Date link">00:29</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/hackergotchi_head.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=hackergotchi head" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Tue, 06 Jul 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="sandro_read_this"><span class="tbox"> .: Sandro, read this :: </span></a>
+		<div class="text">
+			<p>Sandro Giessl: Your feed seems to be down. Can you fix it?</p><p>Thanks.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Jul/06#sandro_read_this" title="Date link">01:16</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/sandro_read_this.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=Sandro, read this" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Mon, 14 Jun 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="going_live"><span class="tbox"> .: going live :: </span></a>
+		<div class="text">
+			<p>Well, it looks like <a href="http://www.kde.org/">KDE.org</a> and even <a href="http://planet.debian.net">Planet Debian</a> have picked up on the existence of my little project, so I guess it's time to officially say "Yes, we're live!"</p><p>Disclaimers are up, layout is (mostly) finished, other planets have been linked, seats are in their upright positions... And we are live, ladies and gents!</p><p>Now if only someone would fix up KBlog (or Tack! Tack needs love too!) Oh, and we need hackergotchi icons. Any artists want to volunteer?<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Jun/14#going_live" title="Date link">09:06</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/going_live.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=going live" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Tue, 08 Jun 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="blog_feeds"><span class="tbox"> .: blog feeds :: </span></a>
+		<div class="text">
+			<p>In response to <a href="http://www.pycs.net/lateral/weblog/">Roberto's</a> query: If you have a blog with a working RSS feed (e.g., one that includes the &lt;pubDate&gt; tags) send an email to clee@kde.org with your name, what you hack on, and the URL of your RSS feed, and I'll add you to the blogroll here.</p><p>Hopefully Ian will fix up kdedevelopers.org soon so that I can start pulling those blog entries too.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Jun/08#blog_feeds" title="Date link">22:23</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/blog_feeds.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=blog feeds" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sun, 06 Jun 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="tack_release"><span class="tbox"> .: tack release :: </span></a>
+		<div class="text">
+			<p>With the advent of <a href="http://planetkde.org/">planet KDE</a>, we need a decent blog posting utility for KDE. This isn't it, but it might become that utility if enough people send patches to me (or hey, you can always fork it!)</p><p>Ladies and gentlemen, without further ado, I present to you:</p><p><a href="http://c133.org/files/tack-0.0.tar.bz2">Tack 0.0</a>, the most minimalist and feature-starved blog posting utility KDE has ever seen. It needs loving, lots of it, and as I'm going to be on an airplane later on today I can't give it the loving it so deserves.</p><p>So download it, marvel at its simplicity and lack of functionality, and then hack on it and send me patches so that it stops sucking so much.</p><p>That is all.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Jun/06#tack_release" title="Date link">08:21</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/tack_release.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=tack release" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="planet_kde"><span class="tbox"> .: planet KDE :: </span></a>
+		<div class="text">
+			<p>I was discussing how addictive <a href="http://planet.gnome.org/">Planet GNOME</a> and <a href="http://planet.debian.net/">Planet Debian</a> are on #kde-devel with a few KDE developers and we lamented the lack of a Planet KDE. However, unlike them, I actually decided to get up and do something about it.</p><p>Behold! <a href="http://planetkde.org/">Planet KDE</a>!</p><p>Yes. It's ugly. It's also fairly empty. Until <a href="http://www.kdedevelopers.org/blog/geiseri">Ian</a> fixes up kdedevelopers.org (see how <a href="http://planetkde.org/broken.html">messed up</a> the feeds are?) so that it includes &lt;pubDate&gt; tags so that the blog entries get sorted correctly, we're pretty lonely over here.</p><p>The good news is, if you're a KDE developer with a blog on your own site, <a href="mailto:clee@kde.org">mail me</a> the URL of your properly-formed RSS feed, tell me what you do in KDE, and I'll add you to the blogroll as soon as possible.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Jun/06#planet_kde" title="Date link">06:08</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/planet_kde.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=planet KDE" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sat, 05 Jun 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="i_kick_ass"><span class="tbox"> .: I kick ass :: </span></a>
+		<div class="text">
+			<p>Tonight is rocking hardcore.</p><p>I spent about twenty minutes autotooling the 'nv' driver from the old monolithic X server tree, and convinced it to build under Daniel's Xizzle/Xorg tree.</p><p>After a bit more hacking around with the build system (to get it to properly generate the Makefiles in the nv dir, and to get the new NV driver module loaded into the libdrivers.a), it actually worked!</p><p>It loads the driver, and it sets the proper resolution, and everything!</p><p>Now the only thing missing is composite support. Which is a little out of my league, but I have faith that the guys at Sun working on it (yeah, I'm looking at you, Stu and Deron) will pull it off.</p><p>Damn, this has been a good night.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Jun/05#i_kick_ass" title="Date link">22:21</a>] | [<a href="http://c133.org/blog/tech/fdo" title="Category">/fdo</a>] | <a href="http://c133.org/blog/tech/fdo/i_kick_ass.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=I kick ass" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Tue, 01 Jun 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="domain_transfers"><span class="tbox"> .: domain transfers :: </span></a>
+		<div class="text">
+			<p>I've had this domain for a while; I personally thought it was cute, and kind of a good tongue-in-cheek joke amongst my friends and myself, but it's about to expire, and so I'm in the process of transferring the domain registry to another registrar. (Rick at <a href="http://dns.vanrein.org/">dns.vanrein.org</a> is really cool, but I don't have e-gold, and his rates aren't the lowest... so since I'm rather strapped for cash these days, I had to find someone cheaper. Of course, I can't afford to lose any email, either...)</p><p>in other news, I've been trying to grok a lot more design knowledge from a few guys with some really good taste. Namely, the Design Fab Five. Good stuff from them, and I like a lot of their ideas. Except for Flash - which I'm not diametrically opposed to, but I just have no use for. So my site really is getting a redesign; I'm not sure exactly what it'll end up looking like, but I'll leave the option for everyone to continue to use this particular design if they really like it. This one is a hybrid of a couple designs I saw on OSWD, plus a few custom modifications that I made myself.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Jun/01#domain_transfers" title="Date link">16:23</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/domain_transfers.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=domain transfers" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Thu, 06 May 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="asteroid_release"><span class="tbox"> .: asteroid release :: </span></a>
+		<div class="text">
+			<p>Published Asteroid on <a href="http://www.kde-look.org/">looky</a> today. Should be interesting to see what kinds of responses I get to it. I'm sure that nobody will ilsten to my "If you don't like it don't use it and don't bitch" disclaimer, but oh well. Such is life.</p><p>In other news, I should be able to hack on my dotNET config page Sometime Soon (TM) so hopefully I can finally get that uploaded into CVS. I know I've promised it before, but honest - it's coming!</p><p>And other stuff is on the horizon. I love KDE development. Also, the guys from Sun's Project Looking Glass team kick ass. (I met them at the <a href="http://freedesktop.org/Software/XDevConf">xdevconf</a> last week.)<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/May/06#asteroid_release" title="Date link">12:30</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/asteroid_release.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=asteroid release" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Wed, 05 May 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="new_toy"><span class="tbox"> .: new toy :: </span></a>
+		<div class="text">
+			<p>Picked up a new toy yesterday, a Logitech USB 200 headset. Hooray for USB audio! I'm amazed at how nice it is. I'm not an audiophile by any means, but this headset is a lot better than I was expecting. And it works great under Linux, as well as OS X. I hear it even works nicely under Windows...</p><p>I love this stuff. Had fun trying to get everything to play to the headphones, but it wasn't too difficult. Highly recommended.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/May/05#new_toy" title="Date link">03:18</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/new_toy.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=new toy" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Tue, 04 May 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="looking_at_laptops"><span class="tbox"> .: looking at laptops :: </span></a>
+		<div class="text">
+			<p>I've been looking at a few laptops lately. Apparently the model I've been ogling - the hp nx7010 - is very much similar to the Compaq X1000 (which shouldn't be a surprise to anyone). I have decided that the specs that I want are:<br /><ol><li>Centrino. Pentium M or bust, I say. (It's the only way I'm likely to get any decent battery life out of a laptop these days.</li><li>Wide-screen 8:5 aspect ratio. I suspect that 1280x800 may be too small; 1440x900 seems about right, but I will probably love 1680x1050 as well, but the important thing is that it's wide-screen.</li><li>I would really prefer it without an OS but the other two specs have so far made this look extremely unlikely, as the only manufacturers I've seen happen to be stuck with nasty evil agreements with Microsoft. (see previous rant.)</li><li>Oh, also. I need at least half a gig of RAM, a 40 gig hard drive, a mobility Radeon would be nice (since it seems like the mobile GeForce chips aren't that prevalent in the Centrino machines...), a DVD/CDRW combo drive, Firewire, and gigabit ethernet.</li></ol><br />Yeah, it sounds like what I want is basically a Powerbook, I know. Except that since I'm going to be working at redhat, I get the feeling that an Apple laptop would be sort of ... bad karma.</p><p>We'll see what happens.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/May/04#looking_at_laptops" title="Date link">03:06</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/looking_at_laptops.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=looking at laptops" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Mon, 03 May 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="my_own_personal_reason_to_hate_microsoft"><span class="tbox"> .: my own personal reason to hate Microsoft :: </span></a>
+		<div class="text">
+			<p>How's this for a reason?</p><p>I called up HP/Compaq, Dell, and IBM today. I can't get a notebook/laptop computer from any one of these manufacturers without paying for a Windows license.</p><p>That's right. I can't even get any of these systems blank, sans operating system. I explained to the guys over the phone - and especially the HP rep seemed sympathetic - but the problem is that Microsoft has strongarmed these manufacturers such that they can't ship any laptops without a Microsoft OS.</p><p>This is complete and utter bullshit. I'm just going to wipe the hard drive and put Linux on it anyway; I'd rather that the hard drive just came blank, as I don't expect any of the hardware guys to install Linux on it for me.</p><p>Ugh. I was hoping that one of these guys might be able to set themselves apart from the rest by satisfying this one wish. Looks like I was wrong.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/May/03#my_own_personal_reason_to_hate_microsoft" title="Date link">16:28</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/my_own_personal_reason_to_hate_microsoft.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=my own personal reason to hate Microsoft" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="asteroid_surprise"><span class="tbox"> .: asteroid surprise :: </span></a>
+		<div class="text">
+			<p>I wrote a new style from scratch a long time ago called Asteroid. It was done half as a gag, and half because I was bored. I also decided to implement it from scratch (instead of following my usual method of hacking on the dotNET code) so that I could provide a better platform for others to build their styles on. (As an aside, I also took out all of the Asteroid-specific code and put it into a Skeleton style, which is BSD-licensed and available on my site).</p><p>However, being that I'm lazy and Asteroid got Good Enough TM for me to use without being too annoyed with it, Asteroid was put on hold at version 0.2. Until today, that is. I got an email from David Chester, with the Munjoy Linux distribution, and he has implemented much more of the widget style code, and submitted his changes back to me. (As an aside, Munjoy looks quite nifty, and I'm going to have to try it out. KDE + Debian = Righteous.)</p><p>So, yeah. I started something neat, and somebody else picked it up and ran with it. Open Source code rocks.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/May/03#asteroid_surprise" title="Date link">16:02</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/asteroid_surprise.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=asteroid surprise" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Sat, 17 Apr 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="invincible"><span class="tbox"> .: invincible! :: </span></a>
+		<div class="text">
+			<p>I feel like the Russian hacker from Goldeneye. I AM INVINCIBLE! Over the course of one day, managed to wrangle IE into actually rendering my site halfway decently (which it should've done in the first place), and also finally figured out a solution to an annoying problem with Apache and customized header/footer templates for automatic indexing. If that doesn't make sense to you, good.</p><p>Other random things of coolness: Xcode has amazingly well-integrated CVS support. Apple kicks ass. Also, Safari kicks ass. I like Apple's implementation of the CSS2 text-shadow property in KHTML. I'm also thinking about redesigning my site once more since I've had the current design up for over a year now, and I'm bored with it. It's a pain in the arse, especially for cross-browser compatibility, and I'm itching to try out a few other look'n'feel combinations. DanielS has suggested that I should try to become a DD. I find this amusing, mostly because of how many discussions I've had with DanielS where I have ranted about how much I hate Debian. Good times.</p><p>update: <a href="http://c133.org/files/">check out</a> the customized output that I struggled for hours to achieve! Marvel at how much less cool it is than it should be!<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Apr/17#invincible" title="Date link">05:41</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/invincible.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=invincible!" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Fri, 16 Apr 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="speaking_of_challenges"><span class="tbox"> .: speaking of challenges :: </span></a>
+		<div class="text">
+			<p>I hate Internet Explorer. If you happen to be unfortunate enough to be using it, please, consider either upgrading to <a href="http://mozilla.org/firefox/">Firefox</a> or convincing the people in charge over in IT to give it a shot. Firefox actually supports web standards - those neat things that make it possible for people to write all sorts of really neat web pages, without having to resort to evil nasty hacks.</p><p>I have no idea what this page looks like under IE5. My closest guess would be that it looks like a plate full of ass, and if it does, then too bad. There are at least a half dozen other web browsers you can use that will render this site properly, and if all else fails you could always upgrade to IE6 since that works for now.</p><p>In the future, my "compatibility" with IE is going to consist of hiding things that the browser doesn't understand, instead of trying to get it to work.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Apr/16#speaking_of_challenges" title="Date link">03:13</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/speaking_of_challenges.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=speaking of challenges" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Thu, 15 Apr 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="linux_lives"><span class="tbox"> .: linux lives :: </span></a>
+		<div class="text">
+			<p>I love MacOS X. I don't mince words about it; the UI is gorgeous, simple, to-the-point, and I love it. I love Linux as well, but mainly because it's usually a challenge to get working right. After getting particularly bored the other day, and I thought to myself "You know, self, this iMac works entirely too well." Seven hours later, Gentoo is up and (mostly) running.</p><p>Major props out to the guys who wrote parted, the guy who wrote the patches to parted to let it resize HFS+ filesystems without destroying data (if I ever meet you, I owe you a beer), and whoever wrote the driver for reading HFS+ volumes under Linux. All of this stuff makes using Linux on a Mac a much more pleasant experience.</p><p>Back in OS X land, though, the guys who I'm the most impressed with are the team behind <a href="http://colloquy.info/">Colloquy</a> which is hands-down, the single coolest Open Source application I've seen on OS X yet. I've seen a few other apps that I consider to have great user interfaces, but Colloquy is the only Open Source one. These guys are seriously awesome.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Apr/15#linux_lives" title="Date link">00:44</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/linux_lives.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=linux lives" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="sync_scrypt"><span class="tbox"> .: sync script :: </span></a>
+		<div class="text">
+			<p>I'm on IRC the other day and my pal Daniel asks me if I'd be interested in taking care of a sysadmin task for him on the freedesktop.org box (pdx). I wasn't doing anything so I said "Sure, what is it?" and he tells me he needs a script to:</p><p><ul><li>Copy over the entire CVS tree from the CVSROOT</li><li>Check out the latest code from each module in each CVS tree, and package it up</li><li>Also, pants</li></ul></p><p>I wrote it. It's neat. Hadn't done any shell scripting in a while, but this was relaxing and it gave me a chance to exercise some of my skills, which is always good.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Apr/15#sync_scrypt" title="Date link">00:30</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/sync_scrypt.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=sync script" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Mon, 12 Apr 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="interviews"><span class="tbox"> .: interviews :: </span></a>
+		<div class="text">
+			<p>I went to Boston on Wednesday last week for an interview that I had at a community health center in the city. I got a call the same day from Red Hat asking if I wanted to come in for an interview the next day, so I told them "Of course!"</p><p>the interview went great! I had the most fun I've ever had interviewing. I got to meet a bunch of cool guys and I had a blast chatting with them, about all sorts of stuff. they had me show up at 10AM and I was supposed to be done by 3, but they kept me until a little after 4. which hopefully is a good sign, but I don't want to get my hopes _too_ far up.</p><p>the hospital was basically a dead end, though. they don't have any positions for the IS department, but they swore that they would call me as soon as they do. they did seem to be pretty impressed though, so I think it went well even if nothing comes of it. it's experience, anyway. which is always good.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Apr/12#interviews" title="Date link">20:22</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/interviews.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=interviews" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Mon, 09 Feb 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="oh_how_I_hate_gssapi"><span class="tbox"> .: oh how I hate gssapi :: </span></a>
+		<div class="text">
+			<p>so now that I have a local kerberos server, and it hands out tickets like a champ, and life is good, the next (logical) step is to want to have single-sign-on for things like (say) my email.</p><p>KDE has a custom ground-up SASL implementation that supports LOGIN, PLAIN, CRAM-MD5 and DIGEST-MD5, but not GSSAPI (which is a layer on top of Kerberos). I took a look at it and decided that I could implement a GSSAPI function for the KDE SASL implementation. I had no idea that it'd be so damned frustrating. why is GSSAPI so complicated, and poorly-designed to boot?</p><p>if you think I'm joking, or complaining about nothing - the main function, gss_init_sec_context, takes THIRTEEN parameters. that's a lot of margin-for-error. one would think they might use custom data structures, ones more complicated than the standard struct with a void pointer and an int to indicate the length of the data, but no. of course not.</p><p>oh well. when I'm done, KDE will have a GSSAPI implementation, meaning that it should Just Work (TM) with any Kerberized service that uses SASL. Namely, this means IMAP servers and probably a few SMTP servers - having single-sign-on for these services will be great.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Feb/09#oh_how_I_hate_gssapi" title="Date link">15:47</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/oh_how_I_hate_gssapi.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=oh how I hate gssapi" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="mmm_kerberos"><span class="tbox"> .: mmm. kerberos. :: </span></a>
+		<div class="text">
+			<p>so I finished setting up a working LDAP server here at home. with Kerberos, for that single-sign-on goodness. I can see why people dig this. I can also see why people fucking hate it. awesome features, complete and total pain in the ass to set up. honestly, I think I probably would rather have installed openBSD, and that's saying a lot.</p><p>but now that it's working, and I have it set up, I am a golden god.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Feb/09#mmm_kerberos" title="Date link">09:03</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/mmm_kerberos.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=mmm. kerberos." class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Fri, 23 Jan 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="corner_widgets_2"><span class="tbox"> .: corner widgets 2 :: </span></a>
+		<div class="text">
+			<p>so I was doing it wrong. ceebx's code works great. (I was checking for currentTab == 0 && cornerWidget, but I needed to be checking for currentTab == 0 && !cornerWidget. one simple little bug...)</p><p>of course, I said I'd probably commit this stuff last night. now I want to integrate a ConfigPage in with my commit so I can have a huge commit with new fun stuff in it... :)</p><p>mmm. well, it's nice to have Konqueror drawing the tabwidget correctly now. it doesn't look so silly anymore.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Jan/23#corner_widgets_2" title="Date link">06:19</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/corner_widgets_2.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=corner widgets 2" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="corner_widgets"><span class="tbox"> .: corner widgets :: </span></a>
+		<div class="text">
+			<p>got an email from ceebx tonight - this guy rules. not only is Plastik the single most visually attractive style I've used (well, aside from the ones I've written, of course ;) but he sends me suggestions for problems that he comes across.</p><p>now, the current suggestion he sent me doesn't seem to be working just yet, but I'm sure I'll get it to. I hate QTabWidgets.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Jan/23#corner_widgets" title="Date link">01:35</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/corner_widgets.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=corner widgets" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Thu, 15 Jan 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="rock_star"><span class="tbox"> .: rock star :: </span></a>
+		<div class="text">
+			<p>I got an email from a Linux distributor today asking me if I would mind going into some detail on my widget style experience. Hopefully my reply will make a good impression, since I've done a pretty decent amount of work in this field; I think it'd rock if I were hired as a consultant or contracted out to for development work.</p><p>Life can be funny. I never expected that my after-school hobby might eventually open up so many doors for me. It's not quite the same as being a rock star, but life could definitely be much worse.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Jan/15#rock_star" title="Date link">21:34</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/rock_star.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=rock star" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Mon, 12 Jan 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="this_is_a_test_from_my_tack_app"><span class="tbox"> .: this is a test from my tack app :: </span></a>
+		<div class="text">
+			<p>hooray! I have a test app! :D</p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Jan/12#this_is_a_test_from_my_tack_app" title="Date link">07:52</a>] | [<a href="http://c133.org/blog/tech/KDE" title="Category">/KDE</a>] | <a href="http://c133.org/blog/tech/KDE/this_is_a_test_from_my_tack_app.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=this is a test from my tack app" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="200_gig_hard_drive"><span class="tbox"> .: 200 gig hard drive :: </span></a>
+		<div class="text">
+			<p>So I got a 200G hard drive today. My dad decided to buy it for me as payment for all of the work I've been doing trying to get his printer working exactly the way he wants it.</p><p>Mmmmm. New hardware. I've completed the move of my /home over to the new drive, and now it's just a matter of wiping the 20G drive with my operating systems on it and using the 40G drive that previously held /home as my new OS drive. (I can fit more operating systems in 40G than I can in 20G! WOOOHOOO!)</p><p>Also, having the laser printer connected to the Mac works seamlessly with KDE over the network. I just pointed a KDE app at the Mac's IP, and it automatically grokked the print queue and even showed me both printers that have been connected to the Mac - nifty stuff. I love open source software.</p><p>(still have to make progress on some sort of a KDE-pyblosxom client. moving that to the top of the TODO, once I'm done screwing with the hard drives.)<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Jan/12#200_gig_hard_drive" title="Date link">01:04</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/200_gig_hard_drive.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=200 gig hard drive" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+<span class="blosxomDate">Thu, 08 Jan 2004</span>
+<div class="container">
+	<div class="mbox">
+		<a id="setting_up_this_blog"><span class="tbox"> .: setting up this blog :: </span></a>
+		<div class="text">
+			<p>so pyblosxom is neat software. I like the whole filesystem-to-blog mapping.</p><p>I really should have gone to sleep a long time ago. I'll need to talk to DanielS about nifty things like blogging via email (which it sounds like he has working with his, and that's just neat) and I'll probably get working on a KDE blogging client too.</p><p>anyway. I'm out for now. peace, everyone.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2004/Jan/08#setting_up_this_blog" title="Date link">05:58</a>] | [<a href="http://c133.org/blog/tech" title="Category"></a>] | <a href="http://c133.org/blog/tech/setting_up_this_blog.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=setting up this blog" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div id="right">
+	<div class="container">
+		<div class="mbox">
+			<span class="tbox"> .: about :: </span>
+			<div class="text">
+			<a href="mailto:clee@kde.org">Chris Lee</a><br />
+				KDE developer
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<div style="text-align: center; margin: 4px;">
+					<input type="hidden" name="cmd" value="_xclick" />
+					<input type="hidden" name="business" value="clee@kde.org" />
+					<input type="hidden" name="no_note" value="1" />
+					<input type="hidden" name="currency_code" value="USD" />
+					<input type="hidden" name="tax" value="0" />
+					<input type="image" style="border: 0px;" src="https://www.paypal.com/en_US/i/btn/x-click-but04.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" />
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="mbox">
+			<span class="tbox"> .: archives :: </span>
+			<div class="text">
+				<a href="http://c133.org/blog/2007/Sep">2007-Sep</a><br />
+<a href="http://c133.org/blog/2007/Jun">2007-Jun</a><br />
+<a href="http://c133.org/blog/2007/May">2007-May</a><br />
+<a href="http://c133.org/blog/2007/Apr">2007-Apr</a><br />
+<a href="http://c133.org/blog/2007/Jan">2007-Jan</a><br />
+<a href="http://c133.org/blog/2006/Dec">2006-Dec</a><br />
+<a href="http://c133.org/blog/2006/Nov">2006-Nov</a><br />
+<a href="http://c133.org/blog/2006/Oct">2006-Oct</a><br />
+<a href="http://c133.org/blog/2006/Aug">2006-Aug</a><br />
+<a href="http://c133.org/blog/2006/May">2006-May</a><br />
+<a href="http://c133.org/blog/2006/Apr">2006-Apr</a><br />
+<a href="http://c133.org/blog/2006/Mar">2006-Mar</a><br />
+<a href="http://c133.org/blog/2006/Feb">2006-Feb</a><br />
+<a href="http://c133.org/blog/2006/Jan">2006-Jan</a><br />
+<a href="http://c133.org/blog/2005/Dec">2005-Dec</a><br />
+<a href="http://c133.org/blog/2005/Nov">2005-Nov</a><br />
+<a href="http://c133.org/blog/2005/Oct">2005-Oct</a><br />
+<a href="http://c133.org/blog/2005/Sep">2005-Sep</a><br />
+<a href="http://c133.org/blog/2005/Aug">2005-Aug</a><br />
+<a href="http://c133.org/blog/2005/Jul">2005-Jul</a><br />
+<a href="http://c133.org/blog/2005/Jun">2005-Jun</a><br />
+<a href="http://c133.org/blog/2005/May">2005-May</a><br />
+<a href="http://c133.org/blog/2005/Apr">2005-Apr</a><br />
+<a href="http://c133.org/blog/2005/Mar">2005-Mar</a><br />
+<a href="http://c133.org/blog/2005/Feb">2005-Feb</a><br />
+<a href="http://c133.org/blog/2005/Jan">2005-Jan</a><br />
+<a href="http://c133.org/blog/2004/Dec">2004-Dec</a><br />
+<a href="http://c133.org/blog/2004/Nov">2004-Nov</a><br />
+<a href="http://c133.org/blog/2004/Oct">2004-Oct</a><br />
+<a href="http://c133.org/blog/2004/Sep">2004-Sep</a><br />
+<a href="http://c133.org/blog/2004/Aug">2004-Aug</a><br />
+<a href="http://c133.org/blog/2004/Jul">2004-Jul</a><br />
+<a href="http://c133.org/blog/2004/Jun">2004-Jun</a><br />
+<a href="http://c133.org/blog/2004/May">2004-May</a><br />
+<a href="http://c133.org/blog/2004/Apr">2004-Apr</a><br />
+<a href="http://c133.org/blog/2004/Feb">2004-Feb</a><br />
+<a href="http://c133.org/blog/2004/Jan">2004-Jan</a><br /><br />
+				<a href="index.rss"><img src="/img/xml.gif" alt="RSS" /></a>
+			</div>
+			<div style="background-color: white; text-align: center">
+				<a href="http://roughingit.subtlehints.net/pyblosxom/"><img src="/img/pb_pyblosxom.gif" alt="pyblosxom" /></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--[if IE 6]>
+</div>
+<![endif]-->
+
+<div id="footer">
+	web site by <a href="mailto:clee@kde.org">clee</a>
+</div>
+
+</body>
+</html>

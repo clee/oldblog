@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>c133.org/blog</title>
+<meta name="description" content="clee's blog" />
+<meta name="keywords" content="Chris Lee, KDE, freedesktop, SPC, developer" />
+<style type="text/css">
+a { text-decoration: none; }
+a:hover { text-decoration: none; color: #FFFF99; background: #00F}
+.title { font-size: 14pt; font-weight: bold; color: #336699; }
+.blosxomDate { display: block; font-weight: bold; font-size: 10pt; text-align: right; color: #cccccc; background-color: #2f343a; padding: 2px; }
+.blosxomTitle { font-size: 13pt; font-weight: bold; color: #000000; }
+.blosxomTime { text-decoration: italicize; color: #336699; }
+</style>
+<link rel="stylesheet" type="text/css" href="/style.css" />
+<link rel="alternative stylesheet" type="text/css" href="/basic.css" title="Basic" />
+<link rel="alternative stylesheet" type="text/css" href="/fancy.css" title="Fancy" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://c133.org/blog/?flav=rss" />
+<link rel="alternate" type="text/plain" title="RSS3" href="http://c133.org/blog/?flav=rss3" />
+
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="/ie6hacks.css" />
+<![endif]-->
+
+</head>
+
+<body>
+<!--[if IE 6]>
+<div id="content">
+<![endif]-->
+<div class="header">
+	<a class="header" href="http://c133.org/blog">c133.org/blog</a>
+</div>
+<div class="nav">all clee, all the time</div>
+<div id="left">
+<span class="blosxomDate">Thu, 14 Apr 2005</span>
+<div class="container">
+	<div class="mbox">
+		<a id="python_rant"><span class="tbox"> .: python rant :: </span></a>
+		<div class="text">
+			<p>(This is a pretty geeky entry, so if you're not a geek, consider yourself warned.)<br />I have a lot of little tiny annoyances with python, since I've been using it for a while now to hack on some stuff. Here's a collection of the ones that are floating on top of my brain.</p><p><h4>::sniff::</h4><br />I miss my ternary operator.</p><p>In C, and C++, and Perl, and Ruby, and PHP, and pretty much any language that I've ever written in (hell, I think even JavaScript supports this, though I could be wrong about that one since I haven't written any JavaScript code in years), you can use a very terse syntax for <code>if (foo) { return bar; } else { return baz; }</code> using what is referred to as the ternary operator.</p><p>The shortened syntax is more like:<br /><pre><br />(foo ? bar : baz)<br /></pre></p><p>Yeah, it's kinda weird. And yeah, if you don't understand it, it's not very intuitive. However, it makes for much shorter and clearer code (to those who grok ternary operators). Python doesn't support this. At all. There was a proposal to include it and it got smacked down, so that they could include such other genius ideas as <code>reversed()</code> instead. Speaking of which...</p><p><h4>backwards</h4><br />Reversing an array is done like:<br /><pre><br />foo = ['one', 'two', 'three']<br />foo.reverse()<br /></pre><br />This does not return a reversed copy of the array, but it does reverse the array in-place and return 'None' which is quite confusing. Especially if you're used to sensible languages which return a reversed copy. So this code doesn't work.<br /><pre><br />foo = ['one', 'two', 'three']<br />for i in foo.reverse(): <span color="#29416C"># bzzzt, reverse() returns 'None'</span><br />	print i<br /></pre><br />You <b>can</b> iterate through an array with the <code>reversed()</code> keyword, like:<br /><pre><br />for i in reversed(foo):<br />	print i<br /></pre><br /><b>However</b>, this is a python-2.4-specific feature, so it's useless if you care about older python releases. Also, it doesn't create a reversed array, just hands you a pointer to a reversed list iterator. So you can't do:</p><p><pre><br />foo = ['one', 'two', 'three']<br />bar = reversed(foo)<br />print bar[0] <span color="#29416C"># 'three'? how about a TypeError!</span><br /></pre></p><p>Because <code>bar</code> is actually not a list, or array, or what-have-you, but it's a listreverseiterator object. Whatever the hell that's supposed to mean. What it translates into is basically "Surprise! We hate you."</p><p>So, you have to do:<br /><pre><br />foo = ['one', 'two', 'three']<br />foo.reverse()<br />for i in foo:<br />	print i<br /></pre><br />Which, granted, ok, isn't the end of the world, but it's pretty ugly and it doesn't work at <b>all</b> the way I had expected it to, which to me is the sign of a language that sucks.</p><p>For reference, the following code in ruby does work exactly how I expected it to. And because ruby and python share a decent amount of syntactical sugar, I keep on getting annoyed when things that I expect to be working in python simply aren't.<br /><pre><br />foo = ['a', 'b', 'c']<br />p foo.reverse() <span color="#29416c"># prints out "['c', 'b', 'a']"</span><br />foo.reverse().each { |i|<br />	print i<br />}<br /></pre><br />Ruby's list iterators are weird, sure. But actually, that's a good way to bring up my next complaint.</p><p><h4>iterators in general</h4><br />Why the hell do you have multiple types of list iterator methods in python? I shouldn't have to remember a different type of iterator method for every different type of container, nor should I have to remember whether it's a global iterator method or a per-container one. That's just annoying, and pointless.</p><p>So, you have <code>foo = ['a', 'b', 'c']</code>, right.<br />Now, to recap, you can traverse the list backwards (in 2.4, anyway) with:<br /><pre><br />for i in reversed(foo):<br />	print i<br /></pre></p><p>You can get the indexes of the members of the list with:<br /><pre><br />for i in xrange(foo):<br />	print i <span color="#29416C"># Prints out the index of each member</span><br /></pre></p><p>You can also do:<br /><pre><br />for i, n in enumerate(foo):<br />	print i, n <span color="#29416C"># Prints the index and the member</span><br /></pre><br />Although I have no idea why you'd want to. (You can always just do xrange(foo) and then 'foo[i]' since they give you the same thing. But ternary operators would be too confusing.)</p><p>But, if you have a dict instead of a list, all of a sudden...<br /><pre><br />foo = { 'a':1, 'b':2, 'c':3 }<br />for i, n in foo.iteritems():<br />	print i, n<br /></pre></p><p>Using <code>enumerate()</code> gives you the index of the 'a', 'b', and 'c' keys. Also, note that <code>enumerate()</code> is a global, like <code>reversed()</code>, but <code>iteritems()</code> is a member of the dict class type. This is the kind of inconsistency in a language that kills me.</p><p><h4>white space</h4><br />Surprisingly, I don't mind the whitespace thing. It just doesn't bother me that much. (Ok, so that's not really a complaint. Still, enough other people complain that I figured it was worth noting that it just doesn't irk me.)</p><p><h4>scoping</h4><br />Scoping is <b>weird</b> in python. Let me explain.<br />In regular languages, a variable declared inside of a block of code only lives until the end of that block; this is the 'scope' of the variable. So if you have:<br /><pre><br />if (condition) {<br />	string foo = "hahahaha";<br />}<br />print (foo); <span color="#29416C">/* Error! 'foo' didn't make it past that last '}' */</span><br /></pre><br />(Yeah, that's not a real language, though I suppose it could be valid C or C++ or something. I don't care, it's just there to illustrate a point.)</p><p>But in python, guess what?</p><p><pre><br />if condition:<br />	foo = "hahahaha"</p><p>print foo <span color="#29416C"># This actually <b>*works*</b> - wtf?</span><br /></pre></p><p>There are other issues that annoy me, but these are just the ones on top of my head. I'll write another rant if this one pisses off enough python devs.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Apr/14#python_rant" title="Date link">22:25</a>] | [<a href="http://c133.org/blog/tech" title="Category">tech</a>] | <a href="http://c133.org/blog/tech/python_rant.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=python rant" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="mbox">
+		<a id="toys"><span class="tbox"> .: toys :: </span></a>
+		<div class="text">
+			<p>The other day, I was on Dell's website. They had the 2005FPW for 25% off, and I thought to myself, "Self, that's a damned good deal."</p><p>However, I didn't have $561.75 free on any of my accounts, and the deal expired in a few days. Then I saw the "Apply now" link. "Hmm, instant loan. Nah, you already have too much credit."</p><p>Wait, though. If you apply for credit and you get rejected, at least in the US, you're automatically entitled to a free credit report. What the hell, why not? I can always use a free copy of my credit report.</p><p>About three minutes later, the Dell website comes back with the result. "Congratulations! You qualify for a $1500 line of credit."</p><p>Shit.</p><p>Needless to say, now I have a sweet 20" widescreen LCD. It's gorgeous. I liked it so much that I bragged to pretty much everyone that would listen. And I even convinced ajax to buy one, but he went and bought three instead. Crazy bastard.</p><p>I'd post pics, but I don't have a digital camera. Mostly because when I buy one, I want it to kick ass, and the ones that I want are still over $1000.</p><p>Note: All amounts in USD.<br /></p>
+			<div style="text-align: right;">[<a href="http://c133.org/blog/2005/Apr/14#toys" title="Date link">19:16</a>] | [<a href="http://c133.org/blog/tech" title="Category">tech</a>] | <a href="http://c133.org/blog/tech/toys.html" title="Permalink">#</a> | <a href="http://www.google.com/search?q=toys" class="noMetaLink" title="GoogleIT!">G</a></div>
+		</div>
+	</div>
+</div>
+
+</div>
+<div id="right">
+	<div class="container">
+		<div class="mbox">
+			<span class="tbox"> .: about :: </span>
+			<div class="text">
+			<a href="mailto:clee@kde.org">Chris Lee</a><br />
+				KDE developer
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<div style="text-align: center; margin: 4px;">
+					<input type="hidden" name="cmd" value="_xclick" />
+					<input type="hidden" name="business" value="clee@kde.org" />
+					<input type="hidden" name="no_note" value="1" />
+					<input type="hidden" name="currency_code" value="USD" />
+					<input type="hidden" name="tax" value="0" />
+					<input type="image" style="border: 0px;" src="https://www.paypal.com/en_US/i/btn/x-click-but04.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" />
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="mbox">
+			<span class="tbox"> .: archives :: </span>
+			<div class="text">
+				<a href="http://c133.org/blog/2005/Sep">2005-Sep</a><br />
+<a href="http://c133.org/blog/2005/Aug">2005-Aug</a><br />
+<a href="http://c133.org/blog/2005/Jul">2005-Jul</a><br />
+<a href="http://c133.org/blog/2005/Jun">2005-Jun</a><br />
+<a href="http://c133.org/blog/2005/May">2005-May</a><br />
+<a href="http://c133.org/blog/2005/Apr">2005-Apr</a><br />
+<a href="http://c133.org/blog/2005/Mar">2005-Mar</a><br />
+<a href="http://c133.org/blog/2005/Feb">2005-Feb</a><br />
+<a href="http://c133.org/blog/2005/Jan">2005-Jan</a><br />
+<a href="http://c133.org/blog/2004/Dec">2004-Dec</a><br />
+<a href="http://c133.org/blog/2004/Nov">2004-Nov</a><br />
+<a href="http://c133.org/blog/2004/Oct">2004-Oct</a><br />
+<a href="http://c133.org/blog/2004/Sep">2004-Sep</a><br />
+<a href="http://c133.org/blog/2004/Aug">2004-Aug</a><br />
+<a href="http://c133.org/blog/2004/Jul">2004-Jul</a><br />
+<a href="http://c133.org/blog/2004/Jun">2004-Jun</a><br />
+<a href="http://c133.org/blog/2004/May">2004-May</a><br />
+<a href="http://c133.org/blog/2004/Apr">2004-Apr</a><br />
+<a href="http://c133.org/blog/2004/Feb">2004-Feb</a><br />
+<a href="http://c133.org/blog/2004/Jan">2004-Jan</a><br /><br />
+				<a href="index.rss"><img src="/img/xml.gif" alt="RSS" /></a>
+			</div>
+			<div style="background-color: white; text-align: center">
+				<a href="http://roughingit.subtlehints.net/pyblosxom/"><img src="/img/pb_pyblosxom.gif" alt="pyblosxom" /></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--[if IE 6]>
+</div>
+<![endif]-->
+
+<div id="footer">
+	web site by <a href="mailto:clee@kde.org">clee</a>
+</div>
+
+</body>
+</html>

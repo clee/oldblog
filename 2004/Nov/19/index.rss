@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<!-- name="generator" content="pyblosxom" -->
+<!DOCTYPE rss PUBLIC "-//Netscape Communications//DTD RSS 0.91//EN" "http://my.netscape.com/publish/formats/rss-0.91.dtd">
+
+<rss version="0.91">
+  <channel>
+    <title>Chris Lee</title>
+    <link>http://c133.org/blog/</link>
+    <description>all clee, all the time</description>
+    <webMaster>clee@kde.org</webMaster>
+    <managingEditor>clee@kde.org</managingEditor>
+    <language>en</language>
+  <item>
+    <title>give me money</title>
+    <link>http://c133.org/log/give_me_money.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;Well, you don&apos;t have to of course. But if you like me, or you really really like me, or you like the work I do on KDE or you just have too much money, you can donate funds to &lt;a href=&quot;https://www.paypal.com/xclick/business=clee%40kde.org&amp;no_note=1&amp;tax=0&amp;currency_code=USD&quot;&gt;clee@kde.org via PayPal&lt;/a&gt;. I&apos;ll be putting a button up as well. hooray capitalism!&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>you want the mustache on, or off?</title>
+    <link>http://c133.org/log/random/you_want_the_mustache_on_or_off.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;I crave brownies.&lt;/p&gt;&lt;p&gt;That is all.&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>disappointment</title>
+    <link>http://c133.org/log/disappointment.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;So, I have had a lot of respect for the GNOME hackers for a long time. I have been incredibly happy that the core hackers in each camp have got along with cheerfulness, decorum and mutual respect - even while some overzealous members of our user communities have flamed and bickered, generating this idea of &quot;The Desktop War&quot;.&lt;/p&gt;&lt;p&gt;But this week, a bunch of actual GNOME developers - not random gimps being idiots - have acted like children and made everyone working on the Linux desktop look like a bunch of juveniles. I&apos;m very disappointed.&lt;/p&gt;&lt;p&gt;How do they expect corporations to take Linux desktop efforts seriously with a release name like &lt;a href=&quot;http://mail.gnome.org/archives/desktop-devel-list/2004-February/msg00051.html&quot;&gt;&quot;That and a pair of testicles&quot;&lt;/a&gt;? Some people have mentioned that this won&apos;t reflect badly on KDE since GNOME and KDE are only related by virtue of being alternatives to eachother; they might have a point, but in reality, nobody in the Windows world knows the difference between KDE and GNOME and this sort of crap makes Linux desktop acceptance that much more difficult for everyone involved.&lt;/p&gt;&lt;p&gt;Very disappointed.&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>whoops! dart in your neck</title>
+    <link>http://c133.org/log/tech/whoops_dart_in_your_neck.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;My evil plot to subvert GNOME is slowly taking shape. Todd Berman is talking about having me help him with some C# bindings for libgaim. Not only will this rock because I may have a decent API to model my own IM client&apos;s after once the C# bindings are working, but it has the benefit of letting me learn a lot more about C# and Mono.&lt;/p&gt;&lt;p&gt;So many things I need to take care of tech-wise... still have to actually run a power cord to the quad PPro in the closet, have to set up LDAP accounts on it and Kerberos with some sort of filesharing for the home directories and then get the client computers here to work properly with that. Want to set up Ubuntu on one of my machines here since it seems to be pretty cool and I&apos;m all about Debian without the brain damage. Need to figure out whether or not to leave the Radeon 9600 in my desktop or put back in the Radeon 8500 (or the GeForce4MX since the nvidia driver is the only one that actually gives reasonable performance with Composite right now...)&lt;/p&gt;&lt;p&gt;Not to mention work stuff. Oy. Not enough hours in the day. And where the hell are my clones, dammit? I&apos;m kinda under-staffed here.&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>4AM once again</title>
+    <link>http://c133.org/log/tech/4am_once_again.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;So, I have a confession to make.&lt;/p&gt;&lt;p&gt;I&apos;ve been using &lt;a href=&quot;http://www.imendio.com/projects/gossip/&quot;&gt;Gossip&lt;/a&gt; as my Jabber client for a while. Which has been working out fairly well, since the UI is nice and clean. But there&apos;s been this slight annoyance with it - every time that I close a chatwindow in Gossip, it forgets how big the window was. Just completely forgets it.&lt;/p&gt;&lt;p&gt;This behavior finally got annoying enough that I put some gloves on, dug down deep, closed my eyes, and &lt;a href=&quot;http://c133.org/tmp/gossip-chat-window-save-size.diff&quot;&gt;massaged some GNOME code&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;The good news is, I lived. I have survived to tell the tale.&lt;/p&gt;&lt;p&gt;The bad news is, it was scary. And I feel sort of dirty.&lt;/p&gt;&lt;p&gt;It took a few hours to work out exactly what needed to go where, but overall it wasn&apos;t quite as terrifying as I had thought it would be. My underscore key did get quite a workout though. And I got to determine a few more reasons why I&apos;m definitely glad to be a KDE developer. (Namespaces. Classes. God, I never thought I&apos;d be so happy to look at classes again.)&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>it&apos;s 4am</title>
+    <link>http://c133.org/log/tech/it_s_4am.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;mpyne has called me out and made it public that I have Grand Plans for a pyblosxom plugin which will read (via XML-RPC) a chunk of text and then throw it on the blog if it likes it.&lt;/p&gt;&lt;p&gt;The trick is getting the plugin to like it.&lt;/p&gt;&lt;p&gt;My idea currently is to make the chunk of text a valid GPG-signed message. Have the server plugin read it in, decode it, check the signature against the configured key ID from the pyblosxom config file, and then if all of the criteria match, post it on the blog.&lt;/p&gt;&lt;p&gt;Have a few small issues to work out, but it looks like a lot of the hard work has been done for me. daniels wrote a Perl script that sort of does this if you filter email into it, but I hate Perl and the setup for that is annoying. Editing pyblosxom&apos;s config files is easy; I doubt that I&apos;m going to end up losing data that way. If I somehow misconfigure a mail server, such that everything for my email ends up at blog@c133.org or something, I&apos;ll be fucked.&lt;/p&gt;&lt;p&gt;And I don&apos;t like that. So, I guess this is the part where I formally announce that I have intentions to actually finish this module (since I have a half-aborted attempt at it from a while back), clean up the code so that my key ID and stuff are no longer hardcoded into it, and then there might actually be a public release.&lt;/p&gt;&lt;p&gt;(Of course, once it&apos;s out, a KDE app which will be able to post to it, probably by using DCOP to communicate with KGPG, will be forthcoming.)&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>whoops</title>
+    <link>http://c133.org/log/tech/whoops.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;Ran out of disk space on tycho for a minute there.&lt;/p&gt;&lt;p&gt;For those of you who don&apos;t know, tycho is the machine which hosts not only c133.org (and this my web site and email) but also planetKDE.org and Daniel Stone&apos;s fooishbar.org.&lt;/p&gt;&lt;p&gt;So when it runs out of disk space, planet KDE goes down and my email stops arriving which makes me sad.&lt;/p&gt;&lt;p&gt;It was getting to be about time to archive the email off again anyway. I&apos;m up to 100M again in my Maildirs. Ugh.&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>bitchin&apos; home-made tesla coil</title>
+    <link>http://c133.org/log/tech/bitchin_home_made_tesla_coil.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;HDTV service was installed and turned on yesterday. Still feeling a little sick and not so hot, but I&apos;m going in to work today.&lt;/p&gt;&lt;p&gt;The new Smallville season looks &lt;b&gt;good&lt;/b&gt; so far. I love that show. I have to admit, I didn&apos;t really like Lois at first but her personality has already started growing on me. I just wish that Comcast offered the WB in HD up here.&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>and I&apos;ve heard great things, Kevin</title>
+    <link>http://c133.org/log/tech/and_ive_heard_great_things_kevin.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;Got another new keyboard. The Logitech one that I was happy with before ended up not being nearly as rockalicious as I had initially thought. Programmable keys, yada yada, USB blah blah, shitty. No, &lt;a href=&quot;http://christopher.aillon.org/&quot;&gt;caillon&lt;/a&gt; was cool enough to buy me a &lt;a href=&quot;http://modelm.org/&quot;&gt;Model M keyboard&lt;/a&gt;. CLICKETY FOR LIFE!&lt;/p&gt;&lt;p&gt;And since I have had this one in my hands, I have realized just how much faster and more accurately I type on these keyboards. I missed that feeling. If only someone would make a USB-native Model M... (Oh, and I ordered another one from eBay which was apparently delivered to my apartment&apos;s office building this morning but I wasn&apos;t here.)&lt;/p&gt;&lt;p&gt;Seriously. These keyboards totally rule.&lt;/p&gt;&lt;p&gt;Incidentally, the one that caillon purchased was in fact not an original Model M but remade by the Keepers of the One True Keyboard, those saints at &lt;a href=&quot;http://www.pckeyboard.com/&quot;&gt;PC Keyboard&lt;/a&gt;. These guys rule. I have no relation to them save that of the delighted recipient of one of their fine products.&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>hardware for doom3</title>
+    <link>http://c133.org/log/tech/hardware_for_doom3.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;new CPU and 1.5GB of RAM arrived yesterday to bolster my hardware so that I can actually play Doom 3.&lt;/p&gt;&lt;p&gt;That game is the first game since Silent Hill to make me actually afraid to go around the next corner.&lt;/p&gt;&lt;p&gt;It&apos;s awesome.&lt;/p&gt;&lt;p&gt;Playing it in the dark, on my TV, with the sound turned waaaay up, is absolutely terrifying, and by far one of the best gaming experiences I&apos;ve ever had.&lt;/p&gt;&lt;p&gt;If only they&apos;d release Linux binaries. Carmack, are you listening? I hate Windows and I&apos;m sick of putting up with weird random shit just so I can play your masterpiece of a game.&lt;/p&gt;&lt;p&gt;::sigh::&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>status 2004/10/07</title>
+    <link>http://c133.org/log/tech/redhat/status_2004_10_07.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;Damn. The past week has been awesome.&lt;br /&gt;&lt;ul&gt;&lt;li&gt;Did the functional testing and RHNQA on a KDE errata here.&lt;/li&gt;&lt;li&gt;Filed bugs against gnome-panel, evolution-data-server, bonobo-activation-server, and ran into a terribly amusing metacity crasher.&lt;/li&gt;&lt;li&gt;Did the functional testing on an ugly cyrus-sasl vulnerability.&lt;/li&gt;&lt;li&gt;Did a *new* round of functional testing on a bug caused by the fix to the ugly cyrus-sasl vulnerability.&lt;/li&gt;&lt;li&gt;Pushed a release of redhat-artwork sometime last week anyway.&lt;/li&gt;&lt;li&gt;Continued hacking on the Qt port of BlueCurve.&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;&lt;p&gt;All in all, dangerously productive. Not to mention keeping track of email and IRC.&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>hooray errata</title>
+    <link>http://c133.org/log/tech/redhat/hooray_errata.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;ugh. Errata suck.&lt;/p&gt;&lt;p&gt;that is all.&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>good discussion</title>
+    <link>http://c133.org/log/tech/redhat/good_discussion.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;Sat down with Ed and Zack yesterday and basically did a mind-meld; we had an hour-plus-long braindump session where I let loose all of the ideas, concerns, and issues that I&apos;ve been thinking about as far as desktop QA goes here at Red Hat.&lt;/p&gt;&lt;p&gt;John Flanagan dropped in towards the end of it, and he seems to be quite open to a lot of our ideas, which is awesome. Hopefully we can get the budget/machines allocated to implement the desktop testing lab that we want to set up; that would be perfect.&lt;/p&gt;&lt;p&gt;Number of times I&apos;ve forgotten my cardkey at the new office: Two&lt;/p&gt;&lt;p&gt;Number of days since someone has passed out in the bathroom: Nine&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>ols rocks</title>
+    <link>http://c133.org/log/tech/ols_rocks.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;Daniel and I drove up with Chris Blizzard for OLS, and we&apos;ve been here since Sunday. The conference is kicking *major* ass, and I&apos;ve gotten to meet tons of awesome people.&lt;/p&gt;&lt;p&gt;The bourbon that Bdale and Keith picked up completely knocked me on my ass though. I was completely out of commission on Tuesday, and barely managed to recover for Wednesday&apos;s activities.&lt;/p&gt;&lt;p&gt;Canada. What more can I really say? Like home, but just different enough to fuck with me. It&apos;s cool here, though; the wifi from the balcony is sort of spotty, but otherwise the room is awesome. More alcohol than I thought could be consumed has been.&lt;/p&gt;&lt;p&gt;Trying to convince Steph to start blogging. No luck as of yet.&lt;/p&gt;&lt;p&gt;Daniel is cramming hard for some deadlines. Which sucks for him. I feel kind of weird, being alone out here on the balcony, knowing that everyone else is asleep already. Good time to blog, though.&lt;/p&gt;&lt;p&gt;Kind of missing home, oddly enough. Never been homesick like this, not since the parents moved me to Arizona. Also, my mind keeps wandering back to Libby.&lt;/p&gt;&lt;p&gt;::sigh::&lt;/p&gt;&lt;p&gt;Overall, though - surprising quantities of ass-kickery have shown up in my life lately, and I&apos;m still frankly quite shocked at it. If only life could be this badass all the time.&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>hackergotchi head</title>
+    <link>http://c133.org/log/tech/hackergotchi_head.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;So I&apos;ve taken the time out of my day to gimp up a &lt;a href=&quot;http://c133.org/img/me-sexy.jpg&quot; title=&quot;Me, about as sexy as I get.&quot;&gt;picture&lt;/a&gt; of myself to use as a hackergotchi head. It&apos;s not a particularly great pic, but I figured it had the most potential for hackergotchi status.&lt;/p&gt;&lt;p&gt;I like the way it turned out. Any other guys here on Planet KDE, if you take the time out to do this, &lt;a href=&quot;mailto:clee@kde.org&quot;&gt;send me the PNG file&lt;/a&gt; and I&apos;ll upload it and get it set for you so that you too can have a floating disembodied head.&lt;/p&gt;&lt;p&gt;If you do decide to gimp yourself up then please note that the image should be about 64 pixels wide to fit properly. Anything from 60 to 80 pixels tall will work for the height, but let&apos;s try not to make the images _too_ large.&lt;/p&gt;&lt;p&gt;(And yes, I&apos;ll host the images here so that your web server won&apos;t melt.)&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>Sandro, read this</title>
+    <link>http://c133.org/log/tech/sandro_read_this.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;Sandro Giessl: Your feed seems to be down. Can you fix it?&lt;/p&gt;&lt;p&gt;Thanks.&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>I kick ass</title>
+    <link>http://c133.org/log/tech/fdo/i_kick_ass.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;Tonight is rocking hardcore.&lt;/p&gt;&lt;p&gt;I spent about twenty minutes autotooling the &apos;nv&apos; driver from the old monolithic X server tree, and convinced it to build under Daniel&apos;s Xizzle/Xorg tree.&lt;/p&gt;&lt;p&gt;After a bit more hacking around with the build system (to get it to properly generate the Makefiles in the nv dir, and to get the new NV driver module loaded into the libdrivers.a), it actually worked!&lt;/p&gt;&lt;p&gt;It loads the driver, and it sets the proper resolution, and everything!&lt;/p&gt;&lt;p&gt;Now the only thing missing is composite support. Which is a little out of my league, but I have faith that the guys at Sun working on it (yeah, I&apos;m looking at you, Stu and Deron) will pull it off.&lt;/p&gt;&lt;p&gt;Damn, this has been a good night.&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>invincible!</title>
+    <link>http://c133.org/log/tech/invincible.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;I feel like the Russian hacker from Goldeneye. I AM INVINCIBLE! Over the course of one day, managed to wrangle IE into actually rendering my site halfway decently (which it should&apos;ve done in the first place), and also finally figured out a solution to an annoying problem with Apache and customized header/footer templates for automatic indexing. If that doesn&apos;t make sense to you, good.&lt;/p&gt;&lt;p&gt;Other random things of coolness: Xcode has amazingly well-integrated CVS support. Apple kicks ass. Also, Safari kicks ass. I like Apple&apos;s implementation of the CSS2 text-shadow property in KHTML. I&apos;m also thinking about redesigning my site once more since I&apos;ve had the current design up for over a year now, and I&apos;m bored with it. It&apos;s a pain in the arse, especially for cross-browser compatibility, and I&apos;m itching to try out a few other look&apos;n&apos;feel combinations. DanielS has suggested that I should try to become a DD. I find this amusing, mostly because of how many discussions I&apos;ve had with DanielS where I have ranted about how much I hate Debian. Good times.&lt;/p&gt;&lt;p&gt;update: &lt;a href=&quot;http://c133.org/files/&quot;&gt;check out&lt;/a&gt; the customized output that I struggled for hours to achieve! Marvel at how much less cool it is than it should be!&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>my own personal reason to hate Microsoft</title>
+    <link>http://c133.org/log/tech/my_own_personal_reason_to_hate_microsoft.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;How&apos;s this for a reason?&lt;/p&gt;&lt;p&gt;I called up HP/Compaq, Dell, and IBM today. I can&apos;t get a notebook/laptop computer from any one of these manufacturers without paying for a Windows license.&lt;/p&gt;&lt;p&gt;That&apos;s right. I can&apos;t even get any of these systems blank, sans operating system. I explained to the guys over the phone - and especially the HP rep seemed sympathetic - but the problem is that Microsoft has strongarmed these manufacturers such that they can&apos;t ship any laptops without a Microsoft OS.&lt;/p&gt;&lt;p&gt;This is complete and utter bullshit. I&apos;m just going to wipe the hard drive and put Linux on it anyway; I&apos;d rather that the hard drive just came blank, as I don&apos;t expect any of the hardware guys to install Linux on it for me.&lt;/p&gt;&lt;p&gt;Ugh. I was hoping that one of these guys might be able to set themselves apart from the rest by satisfying this one wish. Looks like I was wrong.&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  <item>
+    <title>domain transfers</title>
+    <link>http://c133.org/log/tech/domain_transfers.html</link>
+    <pubDate>Fri, 19 Nov 2004 13:08 -0400</pubDate>
+    <description>&lt;p&gt;I&apos;ve had this domain for a while; I personally thought it was cute, and kind of a good tongue-in-cheek joke amongst my friends and myself, but it&apos;s about to expire, and so I&apos;m in the process of transferring the domain registry to another registrar. (Rick at &lt;a href=&quot;http://dns.vanrein.org/&quot;&gt;dns.vanrein.org&lt;/a&gt; is really cool, but I don&apos;t have e-gold, and his rates aren&apos;t the lowest... so since I&apos;m rather strapped for cash these days, I had to find someone cheaper. Of course, I can&apos;t afford to lose any email, either...)&lt;/p&gt;&lt;p&gt;in other news, I&apos;ve been trying to grok a lot more design knowledge from a few guys with some really good taste. Namely, the Design Fab Five. Good stuff from them, and I like a lot of their ideas. Except for Flash - which I&apos;m not diametrically opposed to, but I just have no use for. So my site really is getting a redesign; I&apos;m not sure exactly what it&apos;ll end up looking like, but I&apos;ll leave the option for everyone to continue to use this particular design if they really like it. This one is a hybrid of a couple designs I saw on OSWD, plus a few custom modifications that I made myself.&lt;br /&gt;&lt;/p&gt;</description>
+  </item>
+  </channel>
+</rss>
